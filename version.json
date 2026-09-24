@@ -2,7 +2,7 @@
   "version": "1.1.0",
   "title": "RXcoderapp 藥局智慧小幫手系統 v1.1.0",
   "release_date": "2026-09-24",
-  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/raw/main/releases/RXcoderapp_藥局小幫手_v1.1.0.zip",
+  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/raw/main/releases/RXcoderapp_%E8%97%A5%E5%B1%80%E5%B0%8F%E5%B9%AB%E6%89%8B_v1.1.0.zip",
   "changelog": [
     "授權藥局名稱智慧同步：正式授權解鎖後，簡訊發送頁面頂部招牌與簡訊預設名稱自動切換為授權藥局。",
     "更新版本歷史精簡優化：版本演進歷程精簡為常駐最新 3 筆，重點功能一目了然。"
