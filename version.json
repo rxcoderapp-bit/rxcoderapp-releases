@@ -1,12 +1,11 @@
 {
-  "version": "1.0.9",
-  "title": "RXcoderapp 藥局智慧小幫手系統 v1.0.9",
+  "version": "1.1.0",
+  "title": "RXcoderapp 藥局智慧小幫手系統 v1.1.0",
   "release_date": "2026-09-24",
-  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/raw/main/releases/RXcoderapp_藥局小幫手_v1.0.9.zip",
+  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/raw/main/releases/RXcoderapp_藥局小幫手_v1.1.0.zip",
   "changelog": [
-    "30 天免費全功能試用機制",
-    "離線 Ed25519 授權序號解鎖正式版",
-    "OTA 線上自動無痛更新系統"
+    "授權藥局名稱智慧同步：正式授權解鎖後，簡訊發送頁面頂部招牌與簡訊預設名稱自動切換為授權藥局。",
+    "更新版本歷史精簡優化：版本演進歷程精簡為常駐最新 3 筆，重點功能一目了然。"
   ],
   "mandatory": false
 }
