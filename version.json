@@ -1,13 +1,12 @@
 {
-  "version": "1.1.3",
-  "title": "RXcoderapp 藥局智慧小幫手系統 v1.1.3",
+  "version": "1.1.4",
+  "title": "RXcoderapp 藥局智慧小幫手系統 v1.1.4",
   "release_date": "2026-09-26",
-  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/raw/main/releases/RXcoderapp_藥局小幫手_v1.1.3.zip",
+  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/raw/main/releases/RXcoderapp_藥局小幫手_v1.1.4.zip",
   "changelog": [
-    "名冊匯入立即發送 / 預約發送自由切換：Excel 名冊載入後提供「⚡ 立即發送」與「⏰ 預約發送」雙核心模式，無論是想馬上發送通知還是指定排程，一鍵自由切換。",
-    "通用型 Excel/CSV 多格式智慧相容：全面支援「客戶代號」為手機號碼之各式客製名冊（自動過濾 _x001C_ 控制碼與「合計/總計」匯總列），無日期名冊亦能自選預約時間統一發送。",
-    "欄位智慧對應與彈性自訂切換：系統智慧自動鎖定姓名與手機欄位，並提供即時欄位下拉切換器，面對藥局任何特殊報表格式皆能 100% 完美匯入。",
-    "同門號同住家人智慧合併發送：同門號多位同住家人共用時，系統自動將同住家人姓名並列合併為一封發送（兼顧家人同時領藥提醒並節省簡訊點數）；軟體介面說明全面淨化去除病患姓名舉例，落實隱私防護。"
+    "簡訊預約發送 SMSGO 官方規格 (dlvtime) 修正：全面修正符合簡訊購 SMSGO 官方 API 規範，採用標準 dlvtime 格式（YYYY/MM/DD hh24:mm:ss）進行預約排程傳遞，確保簡訊 100% 依指定時間準時推播，徹底杜絕立刻送出之問題。",
+    "OTA 線上自動無痛升級核心加固：全面優化代碼混淆環境下之更新變數作用域與 Windows 批次引導腳本中文路徑編碼（UTF-8 BOM），杜絕變數存取異常，確保一鍵熱更新 100% 穩定覆蓋並自動重啟。",
+    "即時發送與預約發送雙軌精準分流：強化前後端時程參數防呆，無論是調劑名冊排程、自選時間預約或是切換為立即發送，系統皆精準依選定模式送出。"
   ],
   "mandatory": false
 }
