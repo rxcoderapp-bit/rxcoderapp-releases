@@ -2,7 +2,7 @@
   "version": "1.1.2",
   "title": "RXcoderapp 藥局智慧小幫手系統 v1.1.2",
   "release_date": "2026-09-26",
-  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/raw/main/releases/RXcoderapp_%E8%97%A5%E5%B1%80%E5%B0%8F%E5%B9%AB%E6%89%8B_v1.1.2.zip",
+  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/raw/main/releases/RXcoderapp_藥局小幫手_v1.1.2.zip",
   "changelog": [
     "NCC 企業簡訊法定署名智慧防呆：全面防堵 SMSGO 閘道因 NCC 規範回傳 [-23] 缺少簡訊署名。發送時系統自動於開頭補齊【藥局名稱】署名，確保調劑名冊與手動名單 100% 成功發送。",
     "智慧署名即時字數與扣點透明化：前端手機即時預覽與字數統計全面連動法定署名，發送前點數扣除一目了然，杜絕扣冤枉錢。",
