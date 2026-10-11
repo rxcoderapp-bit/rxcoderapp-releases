@@ -1,12 +1,13 @@
 {
-  "version": "1.1.4",
-  "title": "RXcoderapp 藥局智慧小幫手系統 v1.1.4",
-  "release_date": "2026-09-26",
-  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/raw/main/releases/RXcoderapp_藥局小幫手_v1.1.4.zip",
+  "version": "1.1.5",
+  "title": "RXcoderapp 藥局智慧小幫手系統 v1.1.5",
+  "release_date": "2026-10-11",
+  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/raw/main/releases/RXcoderapp_藥局小幫手_v1.1.5.zip",
   "changelog": [
-    "簡訊預約發送 SMSGO 官方規格 (dlvtime) 修正：全面修正符合簡訊購 SMSGO 官方 API 規範，採用標準 dlvtime 格式（YYYY/MM/DD hh24:mm:ss）進行預約排程傳遞，確保簡訊 100% 依指定時間準時推播，徹底杜絕立刻送出之問題。",
-    "OTA 線上自動無痛升級核心加固：全面優化代碼混淆環境下之更新變數作用域與 Windows 批次引導腳本中文路徑編碼（UTF-8 BOM），杜絕變數存取異常，確保一鍵熱更新 100% 穩定覆蓋並自動重啟。",
-    "即時發送與預約發送雙軌精準分流：強化前後端時程參數防呆，無論是調劑名冊排程、自選時間預約或是切換為立即發送，系統皆精準依選定模式送出。"
+    "管制藥智慧配對升級 (PDF 內文健保碼與藥名深度解析)：徹底解決調劑清冊為預設檔名（如 Visual FoxPro.pdf 或自訂檔名）時無法自動辨識藥品分頁之痛點。系統自動解析 PDF 內文之健保代碼（支援英數混合 10 碼如 AB446851G0）與藥品名稱，100% 精準自動選取對應之管制藥品 Excel 工作表（如 ALPRALINE 0.5MG）。",
+    "工作表選錯即時防呆與一鍵切換：若選取之 Excel 分頁為 0 筆調劑記錄，對帳完成時系統自動偵測並彈出醒目警示橫幅，告知實際對應之藥品分頁，並提供一鍵「👉 立即切換分頁重新對帳」功能，徹底防範 Excel 查無登記紀錄之誤判。",
+    "醫院慢箋跨行身分證辨識與外籍居留證強化：全面優化病患姓名與身分證字號解析邏輯，完美支援台大醫院、慈濟醫院、國泰醫院等名稱過長換行之調劑清冊；全面支援外籍人士 2 碼英文居留證，杜絕身分證字號截斷與遺失。",
+    "病患聚類智慧容錯：針對門市登錄時偶發之單碼打錯筆誤（如蔣泓杕、戴威、羅佳怡等），智慧聚類至「資料瑕疵 / 錯字」分類，不再誤判為雙向單邊遺漏。"
   ],
   "mandatory": false
 }
