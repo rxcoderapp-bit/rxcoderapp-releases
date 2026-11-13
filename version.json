@@ -1,0 +1,11 @@
+{
+  "version": "1.3.3",
+  "title": "RXcoderapp 藥局智慧小幫手系統 v1.3.3",
+  "release_date": "2026-11-13",
+  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/releases/download/v1.3.3/RXcoderapp_v1.3.3.zip",
+  "changelog": [
+    "通用藥品庫存與毛利完整備份還原（.json / .xlsx）：新增一鍵匯出無損 JSON 備份檔（完整保留批號效期、買 X 贈 Y 稀釋單價與調劑毛利歷史）及 4 分頁庫存與進銷毛利統計 Excel 報表。",
+    "匯入前智慧比對預覽與自動快照保護：支援匯入系統備份檔或原生 pharmacy_inventory.json，還原前自動於 data/backups/ 留存舊資料快照，並提供「完整覆蓋還原」與「智慧去重合併匯入」兩種安全模式。"
+  ],
+  "mandatory": false
+}

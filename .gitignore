@@ -1,0 +1,2 @@
+# Keep large binary ZIP archives in GitHub Releases Assets rather than Git commit history
+releases/*.zip
