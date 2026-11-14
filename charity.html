@@ -53,9 +53,14 @@
     .tier-price { font-size: 21px; font-weight: 900; color: #047857; margin-top: 2px; }
     .tier-card.featured .tier-price { color: #B45309; }
     .tier-desc { font-size: 12.5px; color: #475569; line-height: 1.45; }
-    .amount-status { margin-top: 6px; font-size: 12.5px; font-weight: 700; padding: 5px 10px; border-radius: 7px; }
+    .amount-status { margin-top: 6px; font-size: 12.5px; font-weight: 700; padding: 6px 10px; border-radius: 7px; line-height: 1.45; }
     .amount-status.ok { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+    .amount-status.info { background: #FFFBEB; color: #92400E; border: 1px solid #FDE68A; }
     .amount-status.bad { background: #FEF2F2; color: #991B1B; border: 1px solid #FCA5A5; }
+    .legal-disclaimer {
+      background: #F8FAFC; border: 1.5px solid #CBD5E1; border-left: 5px solid #0F766E;
+      border-radius: 10px; padding: 13px 15px; font-size: 12.8px; line-height: 1.68; color: #334155; margin-bottom: 16px;
+    }
 
     .field { margin-bottom: 14px; }
     .field:last-child { margin-bottom: 0; }
@@ -156,19 +161,22 @@
     <div class="hero">
       <a href="./index.html" class="back-link">← 返回 RXcoderapp 官方發布與下載中心</a>
       <a href="./index.html#feedback" class="back-link" style="margin-left: 8px;">💬 意見反應／功能許願</a><br>
-      <span class="hero-badge">Charityware 公益共好授權計畫</span>
-      <h1 class="hero-title">公益自由捐款・依購買版本換取正式授權</h1>
-      <p class="hero-desc">社區藥局是民眾健康的第一道防線。您可自由選擇台灣任一合法立案公益團體直接捐款（一年輕量版須滿 NT$ 1,500、永久買斷版須滿 NT$ 3,600），上傳去識別化憑證後我們將簽發對應版本離線授權序號！</p>
+      <span class="hero-badge">【公益結緣・感恩回饋計畫】無對價公益授權分享</span>
+      <h1 class="hero-title">自主公益行善・建議級距與定期定額結緣回饋</h1>
+      <p class="hero-desc">本軟體由開發者無償提供予熱心公益之社區藥局同業。您可自由捐助台灣任一合法立案公益團體（金流完全不經本站），憑近期單筆捐款或「定期定額」支持證明，由開發團隊單方無償致贈對應離線結緣序號。</p>
     </div>
 
     <div class="content">
       <div class="callout callout-green">
-        <div class="callout-title">🤝 捐款規則、版本對應金額與藥局報稅權益保障說明</div>
+        <div class="callout-title">🤝 公益結緣規則（建議級距・定期定額・自由機構・報稅權益）</div>
         <ul>
-          <li><strong>捐款對象完全自由選擇</strong>：不指定單一團體，您可自由選擇台灣任一依法立案之社福、兒少、醫療或弱勢關懷公益機構，<strong>直接匯款至該團體官方專戶</strong>（開發者絕不代收轉捐）。</li>
-          <li><strong>捐款金額須符合所選購買版本（非任意金額）</strong>：雖採公益響應捐款形式，但須與欲啟用的授權版本一致——申請<strong>「一年輕量授權（365 天）」須檢附單筆滿 NT$ 1,500</strong> 之捐款憑證；申請<strong>「永久買斷授權」須檢附單筆滿 NT$ 3,600</strong> 之捐款憑證，低於對應金額恕無法核發。</li>
-          <li><strong>收據抬頭請填寫「藥局自己或捐款人本人」</strong>：為完整保障貴藥局營業費用或個人綜合所得稅列舉扣除之合法報稅權益，<strong>抬頭務必寫「藥局／公司名稱＋統一編號」或「捐款人自己姓名」</strong>，請勿寫 RXcoderapp！</li>
-          <li><strong>核對辨識方式</strong>：建議在匯款或捐款備註欄填寫 <code>支持RXcoderapp</code>（若已捐款未填備註也沒關係，本表單將以「機構＋日期＋金額＋憑證編號」核對）。</li>
+          <li><strong>捐款對象完全自由選擇</strong>：不指定單一機構，您可自由選擇台灣任一依法立案之社福、兒少、醫療或弱勢關懷公益法人，<strong>直接捐款至該團體官方專戶</strong>（開發者絕不代收轉捐）。</li>
+          <li><strong>雙軌單方回饋設計（鼓勵長期公益，不設硬性退件卡關）</strong>：
+            <br>・<strong>🌸 年度結緣感恩版（365 天）</strong>：自主捐助建議約 <strong>NT$ 1,200～1,500 級距</strong>（或任意小額隨喜皆可），期滿後隔年再次行善即可憑新證明免費續緣。
+            <br>・<strong>🌟 永續共好感恩版（永久授權）</strong>：符合<strong>以下二擇一</strong>即感佩加碼致贈永久版——① 單筆建議響應約 <strong>NT$ 3,600 左右</strong>；或 ② 成為任一合法公益團體<strong>「定期定額」捐款人</strong>（例如每月固定小額 100～300 元，附上定期設定／扣款截圖）。
+          </li>
+          <li><strong>收據抬頭請填寫「藥局自己或捐款人本人」</strong>：為保障貴藥局或個人綜合所得稅列舉扣除之合法報稅權益，<strong>抬頭務必寫「藥局／公司名稱＋統一編號」或「捐款人自己姓名」</strong>，請勿寫 RXcoderapp；若您欲申報抵稅，請確認捐款出於純粹無償之公益心意。</li>
+          <li><strong>核對與審核說明</strong>：建議備註欄填 <code>支持RXcoderapp</code>（未填亦可）。若申請永續永久版但僅附單筆較低金額且無定期定額證明，開發團隊審核時將先單方開通<strong>年度結緣版（365 天）</strong>，歡迎日後採定期定額或再行善升級。</li>
         </ul>
       </div>
 
@@ -176,7 +184,7 @@
         <div class="callout-title">🔒 收據個資保護雙重承諾（隱私預設保護）</div>
         <ul>
           <li><strong>上傳前本地永久塗黑</strong>：本頁內建塗黑遮蔽工具，圖片在您的電腦／手機端直接繪製實心黑塊並重新壓縮匯出，<strong>原始照片與 EXIF GPS 資訊完全不會離開您的裝置</strong>。</li>
-          <li><strong>閱後即焚自動清除</strong>：審核通過並寄發序號後，系統後端將自動刪除該張收據影像檔，僅留存去識別化的憑證編號用於防重複領取核對。</li>
+          <li><strong>閱後即焚自動清除</strong>：完成核對並寄發結緣序號後，系統後端將自動刪除該張憑證影像檔，僅留存去識別化的憑證編號用於防重複請領比對。</li>
         </ul>
       </div>
 
@@ -185,30 +193,30 @@
         <div class="section-card">
           <div class="step-header">
             <span class="step-num">1</span>
-            <h2 class="step-title">選擇申請授權版本、藥局資訊與對應捐款明細</h2>
+            <h2 class="step-title">選擇結緣回饋方案、藥局資訊與公益行善紀錄</h2>
           </div>
 
           <div class="field">
-            <label class="field-label">請選擇欲申請的授權版本（捐款金額須達該版本標準）<span class="req">*</span></label>
+            <label class="field-label">請選擇欲申請的單方公益結緣回饋規格<span class="req">*</span></label>
             <div class="tier-grid" id="tierSelectorGroup">
               <label class="tier-card" id="tierCardAnnual" for="tierAnnual">
                 <input type="radio" id="tierAnnual" name="licenseTier" value="ANNUAL">
                 <div class="tier-head">
-                  <span class="tier-name">一年輕量授權</span>
-                  <span class="tier-pill">365 天完整功能</span>
+                  <span class="tier-name">🌸 年度結緣感恩版</span>
+                  <span class="tier-pill">365 天・可再續緣</span>
                 </div>
-                <div class="tier-price">捐款須滿 NT$ 1,500</div>
-                <div class="tier-desc">適合低門檻體驗整年・綁定門市 1 台電腦・含 OTA 自動無痛升級，到期自由決定是否續約。</div>
+                <div class="tier-price">建議 NT$ 1,200～1,500 級距</div>
+                <div class="tier-desc">適合自主隨喜行善（任意合法金額皆可）・含全 8 大模組與 OTA 升級・隔年期滿再做公益可免費續緣。</div>
               </label>
 
               <label class="tier-card featured selected" id="tierCardPermanent" for="tierPermanent">
                 <input type="radio" id="tierPermanent" name="licenseTier" value="PERMANENT" checked>
                 <div class="tier-head">
-                  <span class="tier-name">永久買斷授權</span>
-                  <span class="tier-pill">🔥 一次買斷免年費</span>
+                  <span class="tier-name">🌟 永續共好感恩版</span>
+                  <span class="tier-pill">永久授權・二擇一資格</span>
                 </div>
-                <div class="tier-price">捐款須滿 NT$ 3,600</div>
-                <div class="tier-desc">單機一次啟用終身授權・絕無年費月租・含 v1.4.0 全模組、OTA 免費更新與雲端健保價同步。</div>
+                <div class="tier-price">建議 ~NT$ 3,600 或 定期定額</div>
+                <div class="tier-desc">資格二擇一：① 單筆建議響應約 3,600 左右；或 ② 任一機構「定期定額」支持者（每月固定小額皆可），含雲端健保價同步。</div>
               </label>
             </div>
           </div>
@@ -223,7 +231,7 @@
             <div class="field">
               <label class="field-label" for="email">接收序號 Email<span class="req">*</span></label>
               <input type="email" id="email" placeholder="例如：pharmacy@example.com" required>
-              <div class="field-hint">審核通過後將把 <code>RXKEY-...</code> 序號寄至此信箱。</div>
+              <div class="field-hint">核對通過後將把 <code>RXKEY-...</code> 結緣序號寄至此信箱。</div>
             </div>
           </div>
 
@@ -249,31 +257,39 @@
 
           <div class="grid-2" style="margin-top: 14px;">
             <div class="field">
-              <label class="field-label" for="voucherType">上傳憑證類型<span class="req">*</span></label>
-              <select id="voucherType">
-                <option value="bank_transfer">網銀／行動支付轉帳成功截圖（推薦・通常無身分證/地址）</option>
-                <option value="official_receipt">正式紙本捐款收據／電子收據截圖</option>
+              <label class="field-label" for="donationMode">公益捐款方式<span class="req">*</span></label>
+              <select id="donationMode">
+                <option value="SINGLE">單筆公益捐款（一般匯款／行動支付／收據）</option>
+                <option value="RECURRING">公益機構「定期定額」支持（每月自動扣款／設定截圖）</option>
               </select>
             </div>
 
             <div class="field">
-              <label class="field-label" for="donationDate">捐款 / 匯款日期<span class="req">*</span></label>
-              <input type="date" id="donationDate" required>
+              <label class="field-label" for="voucherType">上傳憑證類型<span class="req">*</span></label>
+              <select id="voucherType">
+                <option value="bank_transfer">網銀／定期定額扣款／行動支付截圖（通常無身分證/地址）</option>
+                <option value="official_receipt">正式紙本捐款收據／電子收據截圖</option>
+              </select>
             </div>
           </div>
 
           <div class="grid-2" style="margin-top: 14px;">
             <div class="field">
-              <label class="field-label" for="amount">單筆捐款金額（須符合所選版本門檻・NT$）<span class="req">*</span></label>
-              <input type="number" id="amount" min="3600" step="1" placeholder="永久買斷授權須滿 3600" required>
-              <div id="amountStatus" class="amount-status ok">📌 已選擇「永久買斷授權」，單筆捐款金額須達 NT$ 3,600（含以上），不可為任意低額。</div>
+              <label class="field-label" for="donationDate">捐款 / 定期設定日期<span class="req">*</span></label>
+              <input type="date" id="donationDate" required>
             </div>
 
             <div class="field">
               <label class="field-label" for="receiptNo">收據編號 或 轉出帳號後 5 碼<span class="req">*</span></label>
               <input type="text" id="receiptNo" placeholder="例如：R20261114-0082 或 帳號後5碼 12345" required>
-              <div class="field-hint">僅供防止同一張收據重複請領比對使用。</div>
+              <div class="field-hint">僅供防止同一份證明重複請領比對使用。</div>
             </div>
+          </div>
+
+          <div class="field" style="margin-top: 14px;">
+            <label class="field-label" for="amount">捐款金額（單筆總額 或 定期定額每期金額・NT$）<span class="req">*</span></label>
+            <input type="number" id="amount" min="1" step="1" placeholder="單筆隨喜（如 1500 / 3600）或定期定額每期金額（如 100 / 300）" required>
+            <div id="amountStatus" class="amount-status ok">🌟 已選擇「永續共好感恩版（永久）」，建議單筆響應約 NT$ 3,600 或檢附任一公益「定期定額」支持紀錄。</div>
           </div>
         </div>
 
@@ -326,22 +342,28 @@
           </div>
         </div>
 
-        <!-- Step 3: 個資同意與送出 -->
+        <!-- Step 3: 免責聲明、個資同意與送出 -->
+        <div class="legal-disclaimer">
+          <strong>【免責與非合作聲明】</strong><br>
+          免責聲明：本網站非公益勸募發起單位，亦未與任何慈善機構有資金往來或委託合作關係。本站僅為開發者個人響應善舉之無償技術分享，不經手任何金流；使用者之捐款行為屬個人自發之無償公益捐贈，相關收據開立與稅務抵扣悉依各受贈機構與稅法規定辦理。若因系統自動辨識／審核作業誤差導致未能即時開通，請透過聯繫信箱（rxcoderapp@gmail.com）聯繫人工協助，本站不負金錢退還之責。<br>
+          <span style="color:#0F766E; font-weight:700;">※ 稅務意圖提醒：依公益捐贈原則，捐款應出於無償公益心意；若您希望將本次捐款列報所得稅捐贈扣除額或營業費用，請確認您的捐贈行為係基於對該公益團體之純粹無償贊助。</span>
+        </div>
+
         <label class="checkbox-row" for="confirmRedacted">
           <input type="checkbox" id="confirmRedacted" required>
           <span class="checkbox-text">
-            我已確認憑證上的身分證字號、地址、完整卡號或個人聯絡電話等敏感個資皆已遮蔽（或原圖不含上述資料），並同意僅供本次公益授權核對使用，核准發放序號後後端將自動刪除該影像檔。
+            我已確認憑證上的身分證字號、地址、完整卡號或個人聯絡電話等敏感個資皆已遮蔽（或原圖不含上述資料），並知悉上述免責聲明，同意僅供本次公益結緣紀錄核對使用，核准寄發結緣序號後後端將自動刪除該影像檔。
           </span>
         </label>
 
-        <button type="submit" id="btnSubmit" class="btn-submit">🚀 送出申請並加密上傳已去識別化憑證</button>
+        <button type="submit" id="btnSubmit" class="btn-submit">🚀 送出公益結緣紀錄並加密上傳已去識別化憑證</button>
       </form>
 
       <div id="statusPanel" class="status-panel"></div>
     </div>
 
     <div class="footer">
-      RXcoderapp 藥局智慧小幫手系統 · <a href="./index.html#feedback" style="color:#059669; font-weight:700; text-decoration:none;">💬 意見反應與功能許願</a> · 授權支援信箱：<a href="mailto:rxcoderapp@gmail.com" style="color:#0284C7; font-weight:700; text-decoration:none;">rxcoderapp@gmail.com</a>
+      RXcoderapp 藥局智慧小幫手系統 · <a href="./index.html#feedback" style="color:#059669; font-weight:700; text-decoration:none;">💬 意見反應與功能許願</a> · 公益結緣／技術聯繫信箱：<a href="mailto:rxcoderapp@gmail.com" style="color:#0284C7; font-weight:700; text-decoration:none;">rxcoderapp@gmail.com</a>
     </div>
   </div>
 
@@ -355,8 +377,8 @@
 
     const HWID_REGEX = /^RX-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}$/;
     const LICENSE_TIER_SPECS = {
-      ANNUAL: { label: '一年輕量授權 (365 天)', minAmount: 1500 },
-      PERMANENT: { label: '永久買斷授權 (單機終身)', minAmount: 3600 }
+      ANNUAL: { label: '年度結緣感恩版 (365 天・期滿可再續緣)' },
+      PERMANENT: { label: '永續共好感恩版 (永久授權・建議 ~3,600 或 定期定額)' }
     };
 
     // DOM Elements
@@ -364,6 +386,7 @@
     const tierRadios = document.querySelectorAll('input[name="licenseTier"]');
     const tierCardAnnual = document.getElementById('tierCardAnnual');
     const tierCardPermanent = document.getElementById('tierCardPermanent');
+    const donationModeSelect = document.getElementById('donationMode');
     const amountInput = document.getElementById('amount');
     const amountStatus = document.getElementById('amountStatus');
     const hwidInput = document.getElementById('hwid');
@@ -395,25 +418,49 @@
     function updateTierAndAmountUI() {
       const tierKey = getSelectedTierKey();
       const spec = LICENSE_TIER_SPECS[tierKey];
+      const modeVal = donationModeSelect ? donationModeSelect.value : 'SINGLE';
       tierCardAnnual.classList.toggle('selected', tierKey === 'ANNUAL');
       tierCardPermanent.classList.toggle('selected', tierKey === 'PERMANENT');
-      amountInput.min = String(spec.minAmount);
-      amountInput.placeholder = `捐款金額須滿 NT$ ${spec.minAmount.toLocaleString()}`;
+      amountInput.min = '1';
+
+      if (modeVal === 'RECURRING') {
+        amountInput.placeholder = '請輸入定期定額每期捐款金額（例如 100 / 300）';
+      } else {
+        amountInput.placeholder = tierKey === 'ANNUAL'
+          ? '自主捐款金額（建議 1,200～1,500 級距，或任一小額隨喜）'
+          : '自主捐款金額（單筆建議 ~3,600，或上方改選定期定額）';
+      }
 
       const val = parseInt(amountInput.value, 10);
       if (!amountInput.value) {
         amountStatus.className = 'amount-status ok';
-        amountStatus.textContent = `📌 已選擇「${spec.label}」，單筆捐款金額須達 NT$ ${spec.minAmount.toLocaleString()}（含以上），不可填寫低於標準金額。`;
-      } else if (!isFinite(val) || val < spec.minAmount) {
+        if (modeVal === 'RECURRING') {
+          amountStatus.textContent = '🌟 您選擇「定期定額」支持任何合法公益團體（每月固定小額扣款皆可），直接符合永續共好感恩版（永久授權）單方回饋資格！';
+        } else if (tierKey === 'ANNUAL') {
+          amountStatus.textContent = '🌸 已選擇「年度結緣感恩版（365 天）」，建議參考 NT$ 1,200～1,500 級距（亦不設硬性最低門檻，量力隨喜皆可申請）。';
+        } else {
+          amountStatus.textContent = '🌟 已選擇「永續共好感恩版（永久）」，建議單筆響應約 NT$ 3,600 或於上方捐款方式改選「定期定額」。';
+        }
+      } else if (!isFinite(val) || val <= 0) {
         amountStatus.className = 'amount-status bad';
-        amountStatus.textContent = `⚠️ 您目前輸入 NT$ ${isFinite(val) ? val.toLocaleString() : 0}，低於所選「${spec.label}」最低門檻 NT$ ${spec.minAmount.toLocaleString()}（若捐款為 NT$ 1,500~3,599 請改選一年輕量授權）。`;
+        amountStatus.textContent = '⚠️ 請填寫大於 0 的公益捐款金額（單筆總額或定期定額每期金額）。';
+      } else if (tierKey === 'PERMANENT' && modeVal === 'RECURRING') {
+        amountStatus.className = 'amount-status ok';
+        amountStatus.textContent = `🌟 感謝您以「定期定額 每期 NT$ ${val.toLocaleString()} 元」長期投入公益！符合永續共好永久版無償致贈資格。`;
+      } else if (tierKey === 'PERMANENT' && modeVal === 'SINGLE' && val < 3600) {
+        amountStatus.className = 'amount-status info';
+        amountStatus.textContent = `💡 您輸入單筆隨喜 NT$ ${val.toLocaleString()} 元：仍可直接送出；若尚未採定期定額，人工核對時團隊將先單方贈與「年度結緣版（365 天）」作為感謝！`;
+      } else if (tierKey === 'PERMANENT') {
+        amountStatus.className = 'amount-status ok';
+        amountStatus.textContent = `🌟 感謝您的深度公益支持（NT$ ${val.toLocaleString()} 元），符合永續共好永久版建議響應級距！`;
       } else {
         amountStatus.className = 'amount-status ok';
-        amountStatus.textContent = `✅ 金額 NT$ ${val.toLocaleString()} 符合「${spec.label}」門檻要求（須滿 NT$ ${spec.minAmount.toLocaleString()}）。`;
+        amountStatus.textContent = `🌸 感謝您的自主行善（NT$ ${val.toLocaleString()} 元），審核核對後將贈與年度結緣感恩版（365 天），期滿亦可再行善續緣！`;
       }
     }
 
     tierRadios.forEach(r => r.addEventListener('change', updateTierAndAmountUI));
+    if (donationModeSelect) donationModeSelect.addEventListener('change', updateTierAndAmountUI);
     amountInput.addEventListener('input', updateTierAndAmountUI);
 
     // Allow index.html links (?tier=ANNUAL or ?tier=PERMANENT) to preselect tier
@@ -702,6 +749,7 @@
       const email = document.getElementById('email').value.trim();
       const hwid = hwidInput.value.trim().toUpperCase();
       const charityOrg = charityOrgInput.value.trim();
+      const donationMode = donationModeSelect ? donationModeSelect.value : 'SINGLE';
       const voucherType = voucherTypeSelect.value;
       const donationDate = donationDateInput.value;
       const licenseTier = getSelectedTierKey();
@@ -716,17 +764,13 @@
         return alert('機器碼 (HWID) 格式不正確！應類似 RX-XXXX-XXXX-XXXX-XXXX（由軟體內「關於系統」複製）。');
       }
       if (!charityOrg) return alert('請填寫「受贈公益機構名稱」！');
-      if (!donationDate) return alert('請選擇「捐款 / 匯款日期」！');
-      if (!amount || !isFinite(amount) || amount < tierSpec.minAmount) {
+      if (!donationDate) return alert('請選擇「捐款 / 定期設定日期」！');
+      if (!amount || !isFinite(amount) || amount <= 0) {
         amountInput.focus();
-        return alert(
-          `您選擇的是「${tierSpec.label}」，單筆捐款金額須達 NT$ ${tierSpec.minAmount.toLocaleString()} 元（含以上）！\n\n` +
-          `• 一年輕量授權 (365天)：須滿 NT$ 1,500\n` +
-          `• 永久買斷授權 (終身)：須滿 NT$ 3,600`
-        );
+        return alert('請填寫大於 0 的公益捐款金額（單筆總額或定期定額每期金額）！');
       }
       if (!receiptNo) return alert('請填寫「收據編號或轉出帳號後 5 碼」！');
-      if (!loadedImage) return alert('請先上傳捐款憑證圖片或轉帳截圖！');
+      if (!loadedImage) return alert('請先上傳捐款／定期定額證明圖片！');
       if (!confirmRedacted.checked) return alert('請先勾選確認您已完成敏感個資遮蔽！');
 
       if (voucherType === 'official_receipt' && actions.length === 0) {
@@ -746,6 +790,7 @@
       const payload = {
         action: 'submit',
         licenseTier,
+        donationMode,
         pharmacyName,
         email,
         hwid,
@@ -759,18 +804,21 @@
         imageBase64: base64Payload
       };
 
+      const modeLabel = donationMode === 'RECURRING' ? '公益定期定額支持' : '單筆公益捐款';
+
       // Mode 1: Apps Script endpoint not configured yet -> local preview + email fallback
       if (!GAS_WEBAPP_URL) {
-        const mailSubject = encodeURIComponent(`[RXcoderapp公益申請] ${pharmacyName} - ${tierSpec.label} (${hwid})`);
+        const mailSubject = encodeURIComponent(`[RXcoderapp公益結緣] ${pharmacyName} - ${tierSpec.label} (${hwid})`);
         const mailBody = encodeURIComponent(
           `RXcoderapp 開發團隊您好：\n\n` +
-          `我已完成公益響應申請，請協助審核並簽發授權序號（已附上本地塗黑且移除 EXIF 之憑證圖，約 ${approxKb} KB）：\n\n` +
-          `• 申請授權版本：${tierSpec.label}\n` +
+          `我已完成自主公益行善，謹分享去識別化證明以申請無償結緣序號（已移除 EXIF 並遮蔽個資，約 ${approxKb} KB）：\n\n` +
+          `• 申請回饋規格：${tierSpec.label}\n` +
+          `• 公益捐款方式：${modeLabel}\n` +
           `• 藥局名稱：${pharmacyName}\n` +
           `• 接收信箱：${email}\n` +
           `• 門市機器碼 (HWID)：${hwid}\n` +
           `• 受贈公益機構：${charityOrg}\n` +
-          `• 憑證類型：${voucherType === 'bank_transfer' ? '網銀/行動支付轉帳截圖' : '正式捐款收據'}\n` +
+          `• 憑證類型：${voucherType === 'bank_transfer' ? '網銀/定期定額/行動支付截圖' : '正式捐款收據'}\n` +
           `• 捐款日期：${donationDate}\n` +
           `• 捐款金額：NT$ ${amount}\n` +
           `• 收據編號/後5碼：${receiptNo}\n`
@@ -778,7 +826,7 @@
         showStatus('warn', `
           <div style="font-weight:800; font-size:15.5px; margin-bottom:6px;">⚠️ 雲端自動收件端點（GAS_WEBAPP_URL）尚未設定</div>
           <p>系統已先為您在瀏覽器本地完成去識別化重繪（黑色遮蔽 <strong>${actions.length}</strong> 處・已清空 EXIF・圖檔約 <strong>${approxKb} KB</strong>）。</p>
-          <p style="margin-top:4px;">開發團隊填入 Google Apps Script 部署網址前，您可先點擊下方下載已塗黑圖檔檢查效果，或直接透過信箱人工寄送申請：</p>
+          <p style="margin-top:4px;">開發團隊填入 Google Apps Script 部署網址前，您可先點擊下方下載已塗黑圖檔檢查效果，或直接透過信箱人工寄送：</p>
           <div class="fallback-actions">
             <button type="button" class="btn-fallback btn-fb-secondary" onclick="downloadLastCleanImage()">📥 下載已塗黑去識別化圖片 (${approxKb} KB)</button>
             <a class="btn-fallback btn-fb-primary" href="mailto:rxcoderapp@gmail.com?subject=${mailSubject}&body=${mailBody}">📧 開啟郵件軟體寄至 rxcoderapp@gmail.com（請記得夾帶剛下載的圖片）</a>
@@ -801,10 +849,10 @@
           throw new Error(data.error || `伺服器回應錯誤 (HTTP ${res.status})`);
         }
         showStatus('success', `
-          <div style="font-weight:800; font-size:16px; margin-bottom:6px;">🎉 公益共好授權申請已送出！</div>
-          <p><strong>案件編號：</strong><code class="mono">${escapeHtml(data.caseId)}</code> ｜ <strong>申請版本：</strong>${escapeHtml(tierSpec.label)}</p>
+          <div style="font-weight:800; font-size:16px; margin-bottom:6px;">🎉 公益結緣紀錄已成功送出！</div>
+          <p><strong>案件編號：</strong><code class="mono">${escapeHtml(data.caseId)}</code> ｜ <strong>回饋規格：</strong>${escapeHtml(tierSpec.label)}（${escapeHtml(modeLabel)}）</p>
           <p style="margin-top:4px;"><strong>藥局名稱：</strong>${escapeHtml(pharmacyName)} ｜ <strong>HWID：</strong><code class="mono">${escapeHtml(hwid)}</code></p>
-          <p style="margin-top:6px;">✅ 您的憑證已於本地完成塗黑與 EXIF 清除並壓縮至 <strong>${approxKb} KB</strong> 存入加密審查區。開發團隊核對無誤後，系統將自動簽發對應版本之 <code>RXKEY-...</code> 寄至 <strong>${escapeHtml(email)}</strong>，並隨即自動銷毀雲端憑證圖檔。</p>
+          <p style="margin-top:6px;">✅ 您的憑證已於本地完成塗黑與 EXIF 清除並壓縮至 <strong>${approxKb} KB</strong> 存入加密審查區。開發團隊核對後將單方無償致贈 <code>RXKEY-...</code> 寄至 <strong>${escapeHtml(email)}</strong>，並隨即自動銷毀雲端憑證圖檔。</p>
         `);
         form.reset();
         document.getElementById('tierPermanent').checked = true;
@@ -816,13 +864,13 @@
         dropzone.style.display = 'block';
       } catch (err) {
         showStatus('error', `
-          <div style="font-weight:800; font-size:15.5px; margin-bottom:6px;">❌ 申請送出失敗</div>
+          <div style="font-weight:800; font-size:15.5px; margin-bottom:6px;">❌ 送出失敗</div>
           <p>${escapeHtml(err.message || String(err))}</p>
-          <p style="margin-top:6px; font-size:13px;">若重複出現此錯誤，可點擊下方下載您剛塗黑好的圖片，連同資訊寄給 <a href="mailto:rxcoderapp@gmail.com">rxcoderapp@gmail.com</a>。</p>
+          <p style="margin-top:6px; font-size:13px;">若重複出現此錯誤，可點擊下方下載您剛塗黑好的圖片，連同資訊寄給 <a href="mailto:rxcoderapp@gmail.com">rxcoderapp@gmail.com</a> 聯繫人工協助。</p>
         `);
       } finally {
         btnSubmit.disabled = false;
-        btnSubmit.textContent = '🚀 送出申請並加密上傳已去識別化憑證';
+        btnSubmit.textContent = '🚀 送出公益結緣紀錄並加密上傳已去識別化憑證';
       }
     });
 
