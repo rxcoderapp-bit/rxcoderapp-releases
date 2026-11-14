@@ -3,48 +3,147 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RXcoderapp 藥局智慧小幫手系統 · 官方雲端發布與 OTA 更新中心</title>
+  <title>RXcoderapp 藥局智慧小幫手系統 · 官方雲端發布、功能介紹與公益授權中心</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft JhengHei", sans-serif; }
-    body { background: #F8FAFC; color: #0F172A; line-height: 1.6; padding: 40px 20px; }
-    .container { max-width: 760px; margin: 0 auto; background: #FFFFFF; border-radius: 16px; border: 1px solid #E2E8F0; box-shadow: 0 10px 30px rgba(0,0,0,0.05); overflow: hidden; }
-    .hero { background: linear-gradient(135deg, #1A6B5A 0%, #124A3E 100%); color: #FFFFFF; padding: 40px 36px; }
-    .hero-badge { display: inline-block; background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 13px; font-weight: 700; margin-bottom: 12px; }
-    .hero-title { font-size: 28px; font-weight: 800; margin-bottom: 8px; }
-    .hero-desc { font-size: 15px; opacity: 0.9; max-width: 600px; }
-    .content { padding: 32px 36px; }
-    .card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 12px; padding: 20px 24px; margin-bottom: 24px; }
+    html { scroll-behavior: smooth; }
+    body { background: #F1F5F9; color: #0F172A; line-height: 1.6; padding: 28px 16px; }
+    .container { max-width: 980px; margin: 0 auto; background: #FFFFFF; border-radius: 18px; border: 1px solid #E2E8F0; box-shadow: 0 12px 32px rgba(15,23,42,0.06); overflow: hidden; }
+    .hero { background: linear-gradient(135deg, #09352C 0%, #136352 60%, #1B806B 100%); color: #FFFFFF; padding: 34px 36px 28px; }
+    .hero-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 14px; }
+    .hero-badge { display: inline-block; background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.28); padding: 4px 13px; border-radius: 20px; font-size: 13px; font-weight: 700; }
+    .privacy-pill { display: inline-block; background: #FEF3C7; color: #92400E; padding: 4px 13px; border-radius: 20px; font-size: 12.5px; font-weight: 800; }
+    .hero-title { font-size: 30px; font-weight: 900; line-height: 1.28; margin-bottom: 8px; }
+    .hero-subtitle { font-size: 15.5px; color: #D1FAE5; font-weight: 600; margin-bottom: 18px; }
+    .nav-pills { display: flex; flex-wrap: wrap; gap: 8px; }
+    .nav-pills a {
+      color: #ECFDF5; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.22);
+      text-decoration: none; font-size: 13px; font-weight: 700; padding: 6px 13px; border-radius: 999px; transition: background 0.15s;
+    }
+    .nav-pills a:hover { background: rgba(255,255,255,0.24); }
+    .content { padding: 30px 36px; }
+    @media (max-width: 640px) { .hero, .content { padding: 24px 20px; } .hero-title { font-size: 24px; } }
+    .card { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 14px; padding: 22px 24px; margin-bottom: 24px; }
     .ver-badge { background: #10B981; color: #FFF; font-size: 13px; font-weight: 800; padding: 3px 10px; border-radius: 6px; }
     .btn-download { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #059669; color: #FFFFFF; text-decoration: none; font-size: 16px; font-weight: 700; padding: 14px 28px; border-radius: 10px; width: 100%; transition: background 0.15s; margin-top: 12px; box-shadow: 0 4px 12px rgba(5,150,105,0.3); }
     .btn-download:hover { background: #047857; }
-    .btn-charity { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #FFFFFF; color: #047857; border: 1.5px solid #10B981; text-decoration: none; font-size: 15px; font-weight: 700; padding: 12px 24px; border-radius: 10px; width: 100%; transition: background 0.15s; margin-top: 12px; }
+    .btn-charity { display: inline-flex; align-items: center; justify-content: center; gap: 8px; background: #FFFFFF; color: #047857; border: 1.5px solid #10B981; text-decoration: none; font-size: 14.5px; font-weight: 700; padding: 11px 20px; border-radius: 10px; width: 100%; transition: background 0.15s; margin-top: 12px; }
     .btn-charity:hover { background: #ECFDF5; }
     .feature-list { list-style: none; margin-top: 14px; }
     .feature-list li { margin-bottom: 8px; padding-left: 24px; position: relative; font-size: 14px; color: #334155; }
     .feature-list li::before { content: "✓"; position: absolute; left: 0; color: #10B981; font-weight: bold; }
+
+    .sec-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; margin: 28px 0 14px; }
+    .sec-head h2 { font-size: 20px; font-weight: 900; color: #0B3B31; }
+    .sec-tag { background: #D1FAE5; color: #065F46; font-size: 12.5px; font-weight: 800; padding: 4px 12px; border-radius: 999px; }
+
+    .feat-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
+    @media (max-width: 720px) { .feat-grid { grid-template-columns: 1fr; } }
+    .feat-card {
+      background: #FFFFFF; border: 1.5px solid #D1E7DF; border-radius: 12px; padding: 15px 16px;
+      display: flex; gap: 12px; align-items: flex-start; box-shadow: 0 3px 10px rgba(15,81,67,0.04);
+    }
+    .feat-ico {
+      width: 38px; height: 38px; border-radius: 10px; background: #ECFDF5; border: 1px solid #A7F3D0;
+      display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0;
+    }
+    .feat-title { font-size: 15px; font-weight: 800; color: #0F172A; margin-bottom: 3px; }
+    .feat-desc { font-size: 13px; color: #475569; line-height: 1.5; }
+
+    .tier-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 18px; }
+    @media (max-width: 780px) { .tier-grid { grid-template-columns: 1fr; } }
+    .tier-box {
+      background: #FFFFFF; border: 2px solid #CBD5E1; border-radius: 14px; padding: 20px 18px;
+      display: flex; flex-direction: column; position: relative;
+    }
+    .tier-box.featured { border: 2.5px solid #F59E0B; background: linear-gradient(180deg, #FFFDF5 0%, #FFFFFF 35%); }
+    .tier-badge {
+      position: absolute; top: -11px; right: 14px; background: linear-gradient(90deg, #D97706, #F59E0B);
+      color: #FFFFFF; font-size: 12px; font-weight: 800; padding: 3px 10px; border-radius: 999px;
+    }
+    .tier-name { font-size: 17px; font-weight: 900; color: #0F172A; }
+    .tier-sub { font-size: 12.5px; color: #64748B; font-weight: 600; margin-bottom: 8px; }
+    .tier-price { font-size: 28px; font-weight: 900; color: #0B3B31; line-height: 1.1; }
+    .tier-box.featured .tier-price { color: #B45309; }
+    .tier-unit { font-size: 13px; font-weight: 700; color: #64748B; }
+    .tier-orig { font-size: 12.5px; color: #94A3B8; text-decoration: line-through; margin: 4px 0 8px; }
+    .tier-req { font-size: 12.5px; font-weight: 800; color: #047857; background: #ECFDF5; border: 1px solid #A7F3D0; padding: 4px 8px; border-radius: 6px; margin: 6px 0 10px; }
+    .tier-box.featured .tier-req { color: #92400E; background: #FEF3C7; border-color: #FDE68A; }
+    .tier-ul { list-style: none; font-size: 13px; color: #334155; display: flex; flex-direction: column; gap: 6px; flex: 1; border-top: 1px dashed #CBD5E1; padding-top: 10px; }
+    .tier-ul li::before { content: "✓ "; color: #059669; font-weight: 900; }
+    .tier-box.featured .tier-ul li::before { color: #D97706; }
+
+    .poster-share { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 14px; padding: 20px 22px; margin-bottom: 24px; }
+    .poster-preview-img { width: 100%; height: auto; border-radius: 10px; border: 1px solid #CBD5E1; display: block; margin-top: 12px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .btn-sec {
+      display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+      background: #FFFFFF; color: #0F172A; border: 1.5px solid #CBD5E1; border-radius: 9px;
+      padding: 9px 15px; font-size: 13.5px; font-weight: 700; text-decoration: none;
+    }
+    .btn-sec:hover { border-color: #10B981; color: #047857; background: #ECFDF5; }
+
+    .disclaimer-box { background: #F8FAFC; border: 1px solid #CBD5E1; border-left: 5px solid #0F766E; border-radius: 10px; padding: 14px 16px; font-size: 13px; color: #334155; margin-bottom: 24px; }
+
+    .feedback-card { background: #F8FAFC; border: 1.5px solid #CBD5E1; border-radius: 14px; padding: 22px 24px; margin-bottom: 24px; }
+    .fb-type-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .fb-chip {
+      border: 1.5px solid #CBD5E1; background: #FFFFFF; color: #334155; font-size: 13.5px; font-weight: 700;
+      padding: 7px 14px; border-radius: 999px; cursor: pointer; transition: all 0.15s;
+    }
+    .fb-chip.active { background: #0B3B31; color: #FFFFFF; border-color: #0B3B31; }
+    .fb-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    @media (max-width: 640px) { .fb-grid { grid-template-columns: 1fr; } }
+    .fb-label { display: block; font-size: 13px; font-weight: 700; color: #1E293B; margin-bottom: 4px; }
+    .fb-input, .fb-select, .fb-textarea {
+      width: 100%; padding: 9px 12px; border: 1.5px solid #CBD5E1; border-radius: 9px;
+      font-size: 14px; background: #FFFFFF; color: #0F172A; font-family: inherit;
+    }
+    .fb-input:focus, .fb-select:focus, .fb-textarea:focus { outline: none; border-color: #0F766E; box-shadow: 0 0 0 3px rgba(15,118,110,0.14); }
+    .btn-fb-submit {
+      width: 100%; margin-top: 12px; background: #0F766E; color: #FFFFFF; border: none; border-radius: 10px;
+      padding: 13px 20px; font-size: 15px; font-weight: 800; cursor: pointer; transition: opacity 0.15s;
+    }
+    .btn-fb-submit:hover:not(:disabled) { opacity: 0.92; }
+    .btn-fb-submit:disabled { background: #94A3B8; cursor: not-allowed; }
+    .fb-status { display: none; margin-top: 12px; padding: 12px 14px; border-radius: 10px; font-size: 13.5px; }
+    .fb-status.show { display: block; }
+    .fb-status.ok { background: #ECFDF5; border: 1.5px solid #10B981; color: #064E3B; }
+    .fb-status.err { background: #FEF2F2; border: 1.5px solid #F87171; color: #7F1D1D; }
+
     .footer { text-align: center; padding: 20px; font-size: 12.5px; color: #64748B; border-top: 1px solid #E2E8F0; background: #F8FAFC; }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="hero">
-      <span class="hero-badge">RXcoderapp SYSTEM</span>
+      <div class="hero-top">
+        <span class="hero-badge">RXcoderapp SYSTEM · 台灣社區藥局專用</span>
+        <span class="privacy-pill">🔒 資料 100% 留存門市本機｜絕不上雲端</span>
+      </div>
       <h1 class="hero-title">RXcoderapp 藥局智慧小幫手系統</h1>
-      <p class="hero-desc">台灣社區藥局專用 · 管制藥品收支智慧對帳 · 官方動態結存簿冊 · 慢箋領藥簡訊智慧發送</p>
+      <p class="hero-subtitle">藥師每天少加班 1 小時｜採購・管藥・健保差價・USB 條碼・AI 辨識・排班一套搞定</p>
+      <div class="nav-pills">
+        <a href="#download">⬇️ 試用與下載</a>
+        <a href="#features">✨ 8 大核心功能</a>
+        <a href="#pricing">💎 授權與公益方案</a>
+        <a href="#poster-share">📣 分享新版海報</a>
+        <a href="#feedback">💬 意見與功能許願</a>
+      </div>
     </div>
-    
+
     <div class="content">
-      <div class="card">
+      <div class="card" id="download">
         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-          <h2 style="font-size: 20px; font-weight: 800;">最新穩定發布版</h2>
+          <h2 style="font-size: 20px; font-weight: 800;">最新穩定發布版（Windows 免安裝單機版）</h2>
           <span class="ver-badge">v1.3.5 最新發布</span>
         </div>
-        <p style="font-size: 13.5px; color: #64748B;">已啟用 PyArmor 9+ 高強度安全混淆加固・100% 門市電腦本機離線安全保證</p>
-        
+        <p style="font-size: 13.5px; color: #64748B;">已啟用 PyArmor 9+ 安全加固・病患名冊、進貨底價與營運數據 100% 留存門市本機離線資料庫</p>
+
         <ul class="feature-list">
-          <li><strong>30 天全功能免費試用</strong>：門市初次安裝自動起算，享有完整功能權限。</li>
-          <li><strong>非對稱 Ed25519 授權序號</strong>：輸入專屬金鑰，100% 離線本地毫秒級解鎖永久版。</li>
-          <li><strong>OTA 線上自動無痛升級</strong>：軟體內一鍵熱升級，現存 Excel 簿冊與設定 100% 完整保留。</li>
+          <li><strong>30 天全功能免費試用</strong>：下載解壓開啟即起算，免留個資、免綁信用卡，完整實測自家 HIS 檔與盤商帳號。</li>
+          <li><strong>非對稱 Ed25519 授權序號</strong>：透過公益共好計畫取得專屬金鑰，100% 離線本地毫秒級驗證解鎖。</li>
+          <li><strong>OTA 線上自動無痛升級</strong>：軟體右上角「ℹ️ 關於系統」一鍵熱升級，現存 Excel 簿冊與設定 100% 完整保留。</li>
         </ul>
 
         <a href="https://github.com/rxcoderapp-bit/rxcoderapp-releases/releases/download/v1.3.5/RXcoderapp_v1.3.5.zip" class="btn-download">
@@ -52,14 +151,195 @@
         </a>
       </div>
 
+      <div class="sec-head" id="features">
+        <h2>✨ 專為台灣社區藥局打造的 8 大省時神器</h2>
+        <span class="sec-tag">支援最新條碼槍 / LINE+SMSGO 雙通道 / BYOK AI</span>
+      </div>
+
+      <div class="feat-grid">
+        <div class="feat-card">
+          <div class="feat-ico">🛒</div>
+          <div>
+            <div class="feat-title">9 大中盤即時比價 ＋ 免重登結帳</div>
+            <div class="feat-desc">同時查泰昌、彬利、嘉鏵、宇盛、益全、兆宇、茂源、啟宏、藥典底價，採購籃一鍵塞購物車並帶憑證彈窗結帳。</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">💰</div>
+          <div>
+            <div class="feat-title">健保三同替代 ＋ 藥價差即時試算</div>
+            <div class="feat-desc">收錄 14,759 項健保價與 3,727 組三同替代，自動換算盒裝單顆進價與買 X 贈 Y 真實毛利（藥得）。</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">📋</div>
+          <div>
+            <div class="feat-title">管制藥零負庫存收支對帳</div>
+            <div class="feat-desc">HIS 調劑 PDF 秒對 58 頁 Excel 簿冊，阻擋負結存與事前快照一鍵回滾，產出食藥署 A4 橫式列印報表。</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">📦</div>
+          <div>
+            <div class="feat-title">效期紅黃綠燈 ＋ FEFO 備藥缺口預警</div>
+            <div class="feat-desc">進貨買 X 贈 Y 自動攤提成本、先到期先出扣帳，內建近效期退貨單、未來 7 日備藥缺口與食藥署缺藥預警。</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">🔫</div>
+          <div>
+            <div class="feat-title">USB 2D / GS1 條碼槍掃描入庫</div>
+            <div class="feat-desc">免額外驅動支援 EAN-13 與 GS1 DataMatrix，自動解析 GTIN-14、批號與效期（含輸入法干擾偵測），首掃快速綁定健保碼。</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">💬</div>
+          <div>
+            <div class="feat-title">LINE 200 則 ＋ SMSGO 雙通道領藥通知</div>
+            <div class="feat-desc">HIS 亂碼與 +886 格式清洗＋寄存慢箋分燈看板；優先使用官方帳號每月 200 則免費 LINE 推播，未綁或超額自動切換 SMSGO 補位。</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">🤖</div>
+          <div>
+            <div class="feat-title">BYOK AI 進貨單／處方輔助辨識</div>
+            <div class="feat-desc">可自填自有 Gemini／OpenAI API Key，本機拍照或匯入 PDF 辨識進貨單對帳批次入庫與處方三同快選，不經過開發者伺服器。</div>
+          </div>
+        </div>
+        <div class="feat-card">
+          <div class="feat-ico">📅</div>
+          <div>
+            <div class="feat-title">藥局彈性排班 ＋ 執照到期預警</div>
+            <div class="feat-desc">支援兩段班、營業時段藥師在場法規缺口檢核、學分與跨店支援預警，匯出 A4 Excel 與手機可讀排班表。</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-head" id="pricing">
+        <h2>💎 授權方案與「依版本捐款」公益共好規則</h2>
+        <span class="sec-tag">Ed25519 離線授權｜捐款須對應所購版本</span>
+      </div>
+
+      <div class="tier-grid">
+        <div class="tier-box">
+          <div class="tier-name">免費體驗試用</div>
+          <div class="tier-sub">先測確定能跑再申請</div>
+          <div><span class="tier-price">NT$ 0</span> <span class="tier-unit">/ 30 天全功能</span></div>
+          <div class="tier-req">下載解壓開啟即自動啟用</div>
+          <ul class="tier-ul">
+            <li>開放全部 8 大日常核心功能</li>
+            <li>驗證自家 HIS 檔與盤商帳號</li>
+            <li>免留個資、免綁信用卡</li>
+          </ul>
+          <a href="#download" class="btn-charity" style="border-color:#CBD5E1; color:#334155;">⬇️ 立即下載試用</a>
+        </div>
+
+        <div class="tier-box">
+          <div class="tier-name">一年輕量授權</div>
+          <div class="tier-sub">低門檻體驗完整一年</div>
+          <div><span class="tier-price">NT$ 1,500</span> <span class="tier-unit">/ 年・單機</span></div>
+          <div class="tier-req">須檢附單筆滿 NT$ 1,500 公益捐款憑證</div>
+          <ul class="tier-ul">
+            <li>自由捐款台灣任一合法社福團體</li>
+            <li>收據寫藥局/自己抬頭可合法報稅</li>
+            <li>365 天全功能＋OTA 自動升級</li>
+            <li>綁定門市 1 台電腦機器碼 (HWID)</li>
+          </ul>
+          <a href="./charity.html?tier=ANNUAL" class="btn-charity">❤️ 申請一年輕量授權</a>
+        </div>
+
+        <div class="tier-box featured">
+          <div class="tier-badge">🔥 省心推薦・一次買斷</div>
+          <div class="tier-name">永久買斷授權</div>
+          <div class="tier-sub">免每年續約對帳最輕鬆</div>
+          <div><span class="tier-price">NT$ 3,600</span> <span class="tier-unit">/ 單機終身</span></div>
+          <div class="tier-orig">原價 NT$ 4,800・免續約費</div>
+          <div class="tier-req">須檢附單筆滿 NT$ 3,600 公益捐款憑證</div>
+          <ul class="tier-ul">
+            <li>自由捐款台灣任一合法社福團體</li>
+            <li>一次啟用永久使用，絕無年費月租</li>
+            <li>含全模組＋OTA 線上免費更新</li>
+            <li>自動含「雲端健保價一鍵同步」</li>
+          </ul>
+          <a href="./charity.html?tier=PERMANENT" class="btn-charity">🔥 申請永久買斷授權</a>
+        </div>
+      </div>
+
       <div class="card" style="background: #ECFDF5; border-color: #A7F3D0;">
-        <h2 style="font-size: 18px; font-weight: 800; color: #064E3B; margin-bottom: 6px;">🤝 公益共好授權計畫（免費永久版申請）</h2>
-        <p style="font-size: 13.5px; color: #065F46; line-height: 1.65;">
-          支持台灣公益！藥局可<strong>自由選擇任一合法立案社福團體</strong>直接捐款（收據抬頭請寫藥局自己名字／統編保障報稅權益），並透過本地去識別化塗黑編輯器安全上傳憑證，審核通過後免費回饋寄發專屬永久授權序號。
+        <h2 style="font-size: 18px; font-weight: 800; color: #064E3B; margin-bottom: 6px;">🤝 公益共好授權說明（捐款對象自由、金額須符合購買版本）</h2>
+        <p style="font-size: 13.5px; color: #065F46; line-height: 1.7;">
+          本系統採公益響應授權：藥局可<strong>自由選擇任一台灣合法立案社福團體直接捐款</strong>（開發者絕不代收轉捐；收據抬頭請務必填寫<strong>藥局自己名字／統編或捐款人本人</strong>以保障合法報稅權益）。惟單筆捐款金額<strong>須符合欲購買的授權版本</strong>（一年輕量授權須滿 <strong>NT$ 1,500</strong>、永久買斷授權須滿 <strong>NT$ 3,600</strong>，不可填寫任意低額）。完成捐款後免加 LINE，請直接至網頁使用本地塗黑編輯器安全上傳憑證。
         </p>
         <a href="./charity.html" class="btn-charity">
-          <span>❤️ 前往公益響應與去識別化憑證上傳頁</span>
+          <span>❤️ 前往公益授權與本地去識別化憑證上傳頁</span>
         </a>
+      </div>
+
+      <div class="poster-share" id="poster-share">
+        <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px;">
+          <div>
+            <h2 style="font-size: 18px; font-weight: 800; color: #0B3B31;">📣 最新系統功能與授權海報預覽下載</h2>
+            <p style="font-size: 13px; color: #475569; margin-top: 2px;">歡迎同業藥師轉發分享至藥局社群或公會（海報直接引導本官方網站下載與公益授權申請）。</p>
+          </div>
+          <div class="btn-row" style="margin-top:0;">
+            <a href="./assets/poster_mobile_1080x1920.png" download="RXcoderapp_宣傳海報_手機直式_1080x1920.png" class="btn-sec">📱 下載手機直式 PNG (1080×1920)</a>
+            <a href="./assets/poster_landscape_1600x900.png" download="RXcoderapp_宣傳海報_橫式圖卡_1600x900.png" class="btn-sec">🖥️ 下載橫式圖卡 PNG (1600×900)</a>
+          </div>
+        </div>
+        <img src="./assets/poster_landscape_1600x900.png" alt="RXcoderapp 系統介紹與公益授權方案海報" class="poster-preview-img" loading="lazy">
+      </div>
+
+      <div class="feedback-card" id="feedback">
+        <h2 style="font-size: 19px; font-weight: 900; color: #0B3B31; margin-bottom: 6px;">💬 意見反應與功能許願池</h2>
+        <p style="font-size: 13.5px; color: #475569; margin-bottom: 14px;">
+          歡迎社區藥局夥伴提出想新增的功能許願、期望支援的盤商／HIS 報表格式，或使用上的問題與改善建議，我們會定期於業餘時間檢視並排入 OTA 更新！
+        </p>
+
+        <form id="feedbackForm">
+          <div class="fb-type-row" id="fbCategoryRow">
+            <button type="button" class="fb-chip active" data-cat="功能許願">💡 功能許願</button>
+            <button type="button" class="fb-chip" data-cat="問題回報">🐞 問題回報</button>
+            <button type="button" class="fb-chip" data-cat="使用建議">💬 使用建議</button>
+          </div>
+
+          <div class="fb-grid">
+            <div>
+              <label class="fb-label" for="fbModule">相關功能模組</label>
+              <select id="fbModule" class="fb-select">
+                <option value="9 大中盤查價與採購">9 大中盤查價與採購</option>
+                <option value="健保三同替代與藥價差">健保三同替代與藥價差</option>
+                <option value="管制藥收支對帳">管制藥收支對帳</option>
+                <option value="效期庫存與 USB 條碼槍">效期庫存與 USB 條碼槍</option>
+                <option value="慢箋通知 (LINE+SMSGO) 與寄存看板">慢箋通知 (LINE+SMSGO) 與寄存看板</option>
+                <option value="BYOK AI 進貨單/處方辨識">BYOK AI 進貨單/處方辨識</option>
+                <option value="藥局彈性排班與法規檢核">藥局彈性排班與法規檢核</option>
+                <option value="其他許願或官網體驗">其他許願或官網體驗</option>
+              </select>
+            </div>
+            <div>
+              <label class="fb-label" for="fbSender">藥局名稱或稱呼（選填）</label>
+              <input type="text" id="fbSender" class="fb-input" placeholder="選填，例如：○○社區健保藥局 / 陳藥師">
+            </div>
+          </div>
+
+          <div style="margin-bottom: 12px;">
+            <label class="fb-label" for="fbEmail">聯絡信箱（選填，若需開發團隊回覆可留 Email）</label>
+            <input type="email" id="fbEmail" class="fb-input" placeholder="選填，例如：pharmacy@example.com">
+          </div>
+
+          <div>
+            <label class="fb-label" for="fbMessage">意見反應或功能許願說明 <span style="color:#DC2626;">*</span></label>
+            <textarea id="fbMessage" class="fb-textarea" rows="4" placeholder="請描述希望新增的功能、常用的盤商／HIS 匯出格式，或遇到的異常情況與重現步驟..." required></textarea>
+          </div>
+
+          <button type="submit" id="btnFbSubmit" class="btn-fb-submit">📨 送出意見／功能許願</button>
+        </form>
+        <div id="fbStatus" class="fb-status"></div>
+      </div>
+
+      <div class="disclaimer-box">
+        <strong>【業餘低維護服務邊界說明】</strong><br>
+        本軟體由藥局同行業餘開發，採低維護成本之現況授權交付（含軟體內 OTA 自動更新）。9 大中盤查價功能依各網站網頁架構提供自動化輔助，將於業餘空檔盡力維護；恕不提供 24H 專線客服、現場駐點教學或客製改碼。
       </div>
 
       <div style="font-size: 12.5px; color: #64748B; line-height: 1.7;">
@@ -72,5 +352,69 @@
       RXcoderapp 藥局智慧小幫手系統 · RXcoderapp 開發團隊 · 訂購／授權聯繫：<a href="mailto:rxcoderapp@gmail.com" style="color:#0284C7; font-weight:700; text-decoration:none;">rxcoderapp@gmail.com</a>
     </div>
   </div>
+
+  <script>
+    const FEEDBACK_GAS_URL = "https://script.google.com/macros/s/AKfycbzKC4pRXu3JAvBEReRw2EygG0jt5nHcIJmIIu2jddXFFjYTABG2f8ecTE9oDxpZLH_T/exec";
+    let selectedFbCategory = "功能許願";
+
+    document.querySelectorAll('#fbCategoryRow .fb-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedFbCategory = btn.getAttribute('data-cat') || '功能許願';
+        document.querySelectorAll('#fbCategoryRow .fb-chip').forEach(b => b.classList.toggle('active', b === btn));
+      });
+    });
+
+    const fbForm = document.getElementById('feedbackForm');
+    const fbBtn = document.getElementById('btnFbSubmit');
+    const fbStatus = document.getElementById('fbStatus');
+
+    function escapeFbHtml(str) {
+      return String(str).replace(/[&<>"']/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]));
+    }
+
+    fbForm.addEventListener('submit', async (ev) => {
+      ev.preventDefault();
+      fbStatus.className = 'fb-status';
+      const moduleName = document.getElementById('fbModule').value;
+      const senderName = document.getElementById('fbSender').value.trim();
+      const contactEmail = document.getElementById('fbEmail').value.trim();
+      const message = document.getElementById('fbMessage').value.trim();
+
+      if (message.length < 4) {
+        return alert('請至少輸入 4 個字以上的意見反應或功能許願說明！');
+      }
+
+      fbBtn.disabled = true;
+      fbBtn.textContent = '⏳ 正在傳送您的寶貴建議...';
+      try {
+        const res = await fetch(FEEDBACK_GAS_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+          body: JSON.stringify({
+            action: 'feedback',
+            category: selectedFbCategory,
+            module: moduleName,
+            senderName: senderName || '匿名藥局同仁',
+            contactEmail,
+            message,
+            source: '官網首頁許願池'
+          })
+        });
+        const data = await res.json();
+        if (!res.ok || !data.ok) {
+          throw new Error(data.error || `伺服器回應錯誤 (HTTP ${res.status})`);
+        }
+        fbStatus.className = 'fb-status show ok';
+        fbStatus.innerHTML = `✅ 感謝您！已收到您的「<strong>${escapeFbHtml(selectedFbCategory)}</strong>」（單號：<code>${escapeFbHtml(data.feedbackId)}</code>），開發團隊將於檢視後評估排入後續更新！`;
+        fbForm.reset();
+      } catch (err) {
+        fbStatus.className = 'fb-status show err';
+        fbStatus.innerHTML = `❌ 傳送失敗：${escapeFbHtml(err.message || String(err))}。您也可以直接來信 <a href="mailto:rxcoderapp@gmail.com">rxcoderapp@gmail.com</a> 回報。`;
+      } finally {
+        fbBtn.disabled = false;
+        fbBtn.textContent = '📨 送出意見／功能許願';
+      }
+    });
+  </script>
 </body>
 </html>

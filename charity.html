@@ -36,6 +36,27 @@
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
     @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
 
+    .tier-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 16px; }
+    @media (max-width: 640px) { .tier-grid { grid-template-columns: 1fr; } }
+    .tier-card {
+      border: 2px solid #CBD5E1; border-radius: 12px; padding: 14px 16px; background: #FFFFFF;
+      cursor: pointer; transition: all 0.15s; position: relative; display: flex; flex-direction: column; gap: 4px;
+    }
+    .tier-card:hover { border-color: #10B981; background: #F0FDF4; }
+    .tier-card.selected { border-color: #059669; background: #ECFDF5; box-shadow: 0 0 0 3px rgba(5,150,105,0.16); }
+    .tier-card.selected.featured { border-color: #D97706; background: #FFFBEB; box-shadow: 0 0 0 3px rgba(217,119,6,0.18); }
+    .tier-card input[type="radio"] { position: absolute; opacity: 0; pointer-events: none; }
+    .tier-head { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .tier-name { font-size: 15.5px; font-weight: 800; color: #0F172A; }
+    .tier-pill { font-size: 11.5px; font-weight: 800; padding: 2px 9px; border-radius: 999px; background: #D1FAE5; color: #065F46; }
+    .tier-card.featured .tier-pill { background: #FEF3C7; color: #92400E; }
+    .tier-price { font-size: 21px; font-weight: 900; color: #047857; margin-top: 2px; }
+    .tier-card.featured .tier-price { color: #B45309; }
+    .tier-desc { font-size: 12.5px; color: #475569; line-height: 1.45; }
+    .amount-status { margin-top: 6px; font-size: 12.5px; font-weight: 700; padding: 5px 10px; border-radius: 7px; }
+    .amount-status.ok { background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; }
+    .amount-status.bad { background: #FEF2F2; color: #991B1B; border: 1px solid #FCA5A5; }
+
     .field { margin-bottom: 14px; }
     .field:last-child { margin-bottom: 0; }
     label.field-label { display: block; font-size: 13.5px; font-weight: 700; color: #1E293B; margin-bottom: 5px; }
@@ -133,17 +154,19 @@
 <body>
   <div class="container">
     <div class="hero">
-      <a href="./index.html" class="back-link">← 返回 RXcoderapp 官方發布與下載中心</a><br>
+      <a href="./index.html" class="back-link">← 返回 RXcoderapp 官方發布與下載中心</a>
+      <a href="./index.html#feedback" class="back-link" style="margin-left: 8px;">💬 意見反應／功能許願</a><br>
       <span class="hero-badge">Charityware 公益共好授權計畫</span>
-      <h1 class="hero-title">愛心自由捐款・免費回饋永久版授權申請</h1>
-      <p class="hero-desc">社區藥局是民眾健康的第一道防線。RXcoderapp 邀請您自由選擇任一台灣合法立案公益團體直接捐款響應公益，上傳去識別化憑證後，我們將無償致贈正式版專屬授權序號！</p>
+      <h1 class="hero-title">公益自由捐款・依購買版本換取正式授權</h1>
+      <p class="hero-desc">社區藥局是民眾健康的第一道防線。您可自由選擇台灣任一合法立案公益團體直接捐款（一年輕量版須滿 NT$ 1,500、永久買斷版須滿 NT$ 3,600），上傳去識別化憑證後我們將簽發對應版本離線授權序號！</p>
     </div>
 
     <div class="content">
       <div class="callout callout-green">
-        <div class="callout-title">🤝 捐款規則與藥局報稅權益完整保障說明</div>
+        <div class="callout-title">🤝 捐款規則、版本對應金額與藥局報稅權益保障說明</div>
         <ul>
           <li><strong>捐款對象完全自由選擇</strong>：不指定單一團體，您可自由選擇台灣任一依法立案之社福、兒少、醫療或弱勢關懷公益機構，<strong>直接匯款至該團體官方專戶</strong>（開發者絕不代收轉捐）。</li>
+          <li><strong>捐款金額須符合所選購買版本（非任意金額）</strong>：雖採公益響應捐款形式，但須與欲啟用的授權版本一致——申請<strong>「一年輕量授權（365 天）」須檢附單筆滿 NT$ 1,500</strong> 之捐款憑證；申請<strong>「永久買斷授權」須檢附單筆滿 NT$ 3,600</strong> 之捐款憑證，低於對應金額恕無法核發。</li>
           <li><strong>收據抬頭請填寫「藥局自己或捐款人本人」</strong>：為完整保障貴藥局營業費用或個人綜合所得稅列舉扣除之合法報稅權益，<strong>抬頭務必寫「藥局／公司名稱＋統一編號」或「捐款人自己姓名」</strong>，請勿寫 RXcoderapp！</li>
           <li><strong>核對辨識方式</strong>：建議在匯款或捐款備註欄填寫 <code>支持RXcoderapp</code>（若已捐款未填備註也沒關係，本表單將以「機構＋日期＋金額＋憑證編號」核對）。</li>
         </ul>
@@ -162,13 +185,38 @@
         <div class="section-card">
           <div class="step-header">
             <span class="step-num">1</span>
-            <h2 class="step-title">藥局授權資訊與公益捐款明細</h2>
+            <h2 class="step-title">選擇申請授權版本、藥局資訊與對應捐款明細</h2>
+          </div>
+
+          <div class="field">
+            <label class="field-label">請選擇欲申請的授權版本（捐款金額須達該版本標準）<span class="req">*</span></label>
+            <div class="tier-grid" id="tierSelectorGroup">
+              <label class="tier-card" id="tierCardAnnual" for="tierAnnual">
+                <input type="radio" id="tierAnnual" name="licenseTier" value="ANNUAL">
+                <div class="tier-head">
+                  <span class="tier-name">一年輕量授權</span>
+                  <span class="tier-pill">365 天完整功能</span>
+                </div>
+                <div class="tier-price">捐款須滿 NT$ 1,500</div>
+                <div class="tier-desc">適合低門檻體驗整年・綁定門市 1 台電腦・含 OTA 自動無痛升級，到期自由決定是否續約。</div>
+              </label>
+
+              <label class="tier-card featured selected" id="tierCardPermanent" for="tierPermanent">
+                <input type="radio" id="tierPermanent" name="licenseTier" value="PERMANENT" checked>
+                <div class="tier-head">
+                  <span class="tier-name">永久買斷授權</span>
+                  <span class="tier-pill">🔥 一次買斷免年費</span>
+                </div>
+                <div class="tier-price">捐款須滿 NT$ 3,600</div>
+                <div class="tier-desc">單機一次啟用終身授權・絕無年費月租・含 v1.4.0 全模組、OTA 免費更新與雲端健保價同步。</div>
+              </label>
+            </div>
           </div>
 
           <div class="grid-2">
             <div class="field">
               <label class="field-label" for="pharmacyName">藥局 / 門市名稱<span class="req">*</span></label>
-              <input type="text" id="pharmacyName" placeholder="例如：仁愛社區健保藥局" required>
+              <input type="text" id="pharmacyName" placeholder="例如：○○社區健保藥局" required>
               <div class="field-hint">此名稱將寫入您的專屬離線授權證書內。</div>
             </div>
 
@@ -216,8 +264,9 @@
 
           <div class="grid-2" style="margin-top: 14px;">
             <div class="field">
-              <label class="field-label" for="amount">捐款金額（新台幣 NT$）<span class="req">*</span></label>
-              <input type="number" id="amount" min="1" step="1" placeholder="自由心意金額，例如 1000" required>
+              <label class="field-label" for="amount">單筆捐款金額（須符合所選版本門檻・NT$）<span class="req">*</span></label>
+              <input type="number" id="amount" min="3600" step="1" placeholder="永久買斷授權須滿 3600" required>
+              <div id="amountStatus" class="amount-status ok">📌 已選擇「永久買斷授權」，單筆捐款金額須達 NT$ 3,600（含以上），不可為任意低額。</div>
             </div>
 
             <div class="field">
@@ -292,7 +341,7 @@
     </div>
 
     <div class="footer">
-      RXcoderapp 藥局智慧小幫手系統 · 公益共好授權支援信箱：<a href="mailto:rxcoderapp@gmail.com" style="color:#0284C7; font-weight:700; text-decoration:none;">rxcoderapp@gmail.com</a>
+      RXcoderapp 藥局智慧小幫手系統 · <a href="./index.html#feedback" style="color:#059669; font-weight:700; text-decoration:none;">💬 意見反應與功能許願</a> · 授權支援信箱：<a href="mailto:rxcoderapp@gmail.com" style="color:#0284C7; font-weight:700; text-decoration:none;">rxcoderapp@gmail.com</a>
     </div>
   </div>
 
@@ -305,9 +354,18 @@
     const GAS_WEBAPP_URL = "https://script.google.com/macros/s/AKfycbzKC4pRXu3JAvBEReRw2EygG0jt5nHcIJmIIu2jddXFFjYTABG2f8ecTE9oDxpZLH_T/exec";
 
     const HWID_REGEX = /^RX-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}-[A-F0-9]{4}$/;
+    const LICENSE_TIER_SPECS = {
+      ANNUAL: { label: '一年輕量授權 (365 天)', minAmount: 1500 },
+      PERMANENT: { label: '永久買斷授權 (單機終身)', minAmount: 3600 }
+    };
 
     // DOM Elements
     const form = document.getElementById('charityForm');
+    const tierRadios = document.querySelectorAll('input[name="licenseTier"]');
+    const tierCardAnnual = document.getElementById('tierCardAnnual');
+    const tierCardPermanent = document.getElementById('tierCardPermanent');
+    const amountInput = document.getElementById('amount');
+    const amountStatus = document.getElementById('amountStatus');
     const hwidInput = document.getElementById('hwid');
     const charityOrgInput = document.getElementById('charityOrg');
     const donationDateInput = document.getElementById('donationDate');
@@ -328,6 +386,47 @@
     const confirmRedacted = document.getElementById('confirmRedacted');
     const btnSubmit = document.getElementById('btnSubmit');
     const statusPanel = document.getElementById('statusPanel');
+
+    function getSelectedTierKey() {
+      const checked = document.querySelector('input[name="licenseTier"]:checked');
+      return (checked && LICENSE_TIER_SPECS[checked.value]) ? checked.value : 'PERMANENT';
+    }
+
+    function updateTierAndAmountUI() {
+      const tierKey = getSelectedTierKey();
+      const spec = LICENSE_TIER_SPECS[tierKey];
+      tierCardAnnual.classList.toggle('selected', tierKey === 'ANNUAL');
+      tierCardPermanent.classList.toggle('selected', tierKey === 'PERMANENT');
+      amountInput.min = String(spec.minAmount);
+      amountInput.placeholder = `捐款金額須滿 NT$ ${spec.minAmount.toLocaleString()}`;
+
+      const val = parseInt(amountInput.value, 10);
+      if (!amountInput.value) {
+        amountStatus.className = 'amount-status ok';
+        amountStatus.textContent = `📌 已選擇「${spec.label}」，單筆捐款金額須達 NT$ ${spec.minAmount.toLocaleString()}（含以上），不可填寫低於標準金額。`;
+      } else if (!isFinite(val) || val < spec.minAmount) {
+        amountStatus.className = 'amount-status bad';
+        amountStatus.textContent = `⚠️ 您目前輸入 NT$ ${isFinite(val) ? val.toLocaleString() : 0}，低於所選「${spec.label}」最低門檻 NT$ ${spec.minAmount.toLocaleString()}（若捐款為 NT$ 1,500~3,599 請改選一年輕量授權）。`;
+      } else {
+        amountStatus.className = 'amount-status ok';
+        amountStatus.textContent = `✅ 金額 NT$ ${val.toLocaleString()} 符合「${spec.label}」門檻要求（須滿 NT$ ${spec.minAmount.toLocaleString()}）。`;
+      }
+    }
+
+    tierRadios.forEach(r => r.addEventListener('change', updateTierAndAmountUI));
+    amountInput.addEventListener('input', updateTierAndAmountUI);
+
+    // Allow index.html links (?tier=ANNUAL or ?tier=PERMANENT) to preselect tier
+    (function initTierFromQuery() {
+      const qp = new URLSearchParams(location.search);
+      const qTier = String(qp.get('tier') || '').toUpperCase();
+      if (qTier === 'ANNUAL') {
+        document.getElementById('tierAnnual').checked = true;
+      } else if (qTier === 'PERMANENT') {
+        document.getElementById('tierPermanent').checked = true;
+      }
+      updateTierAndAmountUI();
+    })();
 
     // Preset today's max date
     const todayStr = new Date().toISOString().split('T')[0];
@@ -605,7 +704,9 @@
       const charityOrg = charityOrgInput.value.trim();
       const voucherType = voucherTypeSelect.value;
       const donationDate = donationDateInput.value;
-      const amount = parseInt(document.getElementById('amount').value, 10);
+      const licenseTier = getSelectedTierKey();
+      const tierSpec = LICENSE_TIER_SPECS[licenseTier];
+      const amount = parseInt(amountInput.value, 10);
       const receiptNo = document.getElementById('receiptNo').value.trim();
 
       if (!pharmacyName) return alert('請填寫「藥局 / 門市名稱」！');
@@ -616,7 +717,14 @@
       }
       if (!charityOrg) return alert('請填寫「受贈公益機構名稱」！');
       if (!donationDate) return alert('請選擇「捐款 / 匯款日期」！');
-      if (!amount || amount <= 0) return alert('請填寫有效的捐款金額！');
+      if (!amount || !isFinite(amount) || amount < tierSpec.minAmount) {
+        amountInput.focus();
+        return alert(
+          `您選擇的是「${tierSpec.label}」，單筆捐款金額須達 NT$ ${tierSpec.minAmount.toLocaleString()} 元（含以上）！\n\n` +
+          `• 一年輕量授權 (365天)：須滿 NT$ 1,500\n` +
+          `• 永久買斷授權 (終身)：須滿 NT$ 3,600`
+        );
+      }
       if (!receiptNo) return alert('請填寫「收據編號或轉出帳號後 5 碼」！');
       if (!loadedImage) return alert('請先上傳捐款憑證圖片或轉帳截圖！');
       if (!confirmRedacted.checked) return alert('請先勾選確認您已完成敏感個資遮蔽！');
@@ -637,6 +745,7 @@
 
       const payload = {
         action: 'submit',
+        licenseTier,
         pharmacyName,
         email,
         hwid,
@@ -652,10 +761,11 @@
 
       // Mode 1: Apps Script endpoint not configured yet -> local preview + email fallback
       if (!GAS_WEBAPP_URL) {
-        const mailSubject = encodeURIComponent(`[RXcoderapp公益申請] ${pharmacyName} (${hwid})`);
+        const mailSubject = encodeURIComponent(`[RXcoderapp公益申請] ${pharmacyName} - ${tierSpec.label} (${hwid})`);
         const mailBody = encodeURIComponent(
           `RXcoderapp 開發團隊您好：\n\n` +
           `我已完成公益響應申請，請協助審核並簽發授權序號（已附上本地塗黑且移除 EXIF 之憑證圖，約 ${approxKb} KB）：\n\n` +
+          `• 申請授權版本：${tierSpec.label}\n` +
           `• 藥局名稱：${pharmacyName}\n` +
           `• 接收信箱：${email}\n` +
           `• 門市機器碼 (HWID)：${hwid}\n` +
@@ -692,11 +802,13 @@
         }
         showStatus('success', `
           <div style="font-weight:800; font-size:16px; margin-bottom:6px;">🎉 公益共好授權申請已送出！</div>
-          <p><strong>案件編號：</strong><code class="mono">${escapeHtml(data.caseId)}</code></p>
+          <p><strong>案件編號：</strong><code class="mono">${escapeHtml(data.caseId)}</code> ｜ <strong>申請版本：</strong>${escapeHtml(tierSpec.label)}</p>
           <p style="margin-top:4px;"><strong>藥局名稱：</strong>${escapeHtml(pharmacyName)} ｜ <strong>HWID：</strong><code class="mono">${escapeHtml(hwid)}</code></p>
-          <p style="margin-top:6px;">✅ 您的憑證已於本地完成塗黑與 EXIF 清除並壓縮至 <strong>${approxKb} KB</strong> 存入加密審查區。開發團隊核對無誤後，系統將自動簽發永久版 <code>RXKEY-...</code> 至 <strong>${escapeHtml(email)}</strong>，並隨即自動銷毀雲端憑證圖檔。</p>
+          <p style="margin-top:6px;">✅ 您的憑證已於本地完成塗黑與 EXIF 清除並壓縮至 <strong>${approxKb} KB</strong> 存入加密審查區。開發團隊核對無誤後，系統將自動簽發對應版本之 <code>RXKEY-...</code> 寄至 <strong>${escapeHtml(email)}</strong>，並隨即自動銷毀雲端憑證圖檔。</p>
         `);
         form.reset();
+        document.getElementById('tierPermanent').checked = true;
+        updateTierAndAmountUI();
         donationDateInput.value = todayStr;
         loadedImage = null;
         actions = [];
