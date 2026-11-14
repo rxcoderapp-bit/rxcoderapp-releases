@@ -1,13 +1,13 @@
 {
-  "version": "1.3.5",
-  "title": "RXcoderapp 藥局智慧小幫手系統 v1.3.5",
+  "version": "1.4.1",
+  "title": "RXcoderapp 藥局智慧小幫手系統 v1.4.1",
   "release_date": "2026-11-14",
-  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/releases/download/v1.3.5/RXcoderapp_v1.3.5.zip",
+  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/releases/download/v1.4.1/RXcoderapp_v1.4.1.zip",
   "changelog": [
-    "修復桌面版排班 Excel 匯出無反應問題：啟用桌面視窗下載支援並改用前端檔案串流下載機制，點擊「匯出排班 Excel」可穩定另存並顯示匯出結果。",
-    "排班 Excel 升級為每週（W一～W日）自動分段總表：依週一至週日自動分段排版，完整呈現每週工時（sum）、累計工時（csum）、晚班與休／假統計、每日藥師在場檢核及班別圖例，預設單頁 A4 橫式列印適應。",
-    "修復排班列印公告版右側裁切並新增週分段公告檢視：修正列印版面容器截斷問題，支援完整 1～31 日橫式列印與「每週分段公告版 (W一~W日)」雙模式切換。",
-    "新增「一鍵清除重排」功能：支援一鍵清除當月排班（可選是否保留或清除公休日／備註），並可於清除後立即自動重新產生建議班表。"
+    "隨附 20 頁《RXcoderapp 藥局智慧小幫手系統 v1.4.1 詳細圖文操作手冊 (PDF)》：發行壓縮包與 OTA 線上更新同步附帶完整圖文操作指引，涵蓋雙通道通知、慢箋看板、9 大中盤商比價與健保三同、USB 掃碼與 BYOK Gemini 4 辨識、1~4 級管藥對帳、彈性排班與法規免責說明，內建全虛擬沙盒截圖、零真實個資。",
+    "修復慢箋簡訊「💚 LINE 雙通道設定」彈窗點擊無反應與路徑引導：將 #line-modal 移出預設隱藏之範本彈窗並修正層級（z-index），同時於設定視窗與慢箋工具列補上直達連結，彈窗頂部內建 3 步驟新手引導與 LINE 官方額度同步功能。",
+    "BYOK 自帶 AI 金鑰升級 Gemini 4 / Gemma 4 可用模型下拉選單與連線過濾：提供 gemini-4-hydrogen、gemini-4-argon 等最新系列與手動自填模式，按下「偵測模型」自動分頁拉取並濾除 TTS 語音／生圖模型；金鑰輸入框改用 new-password 防誤填，徹底解決假圓點與狀態誤判。",
+    "介面精修與合規免責補強：移除側邊欄「藥局人員排班系統」多餘 NEW 徽章、移除真實同名藥局預設佔位名稱，並於「關於與授權管理」與官網補充 Zero-Cloud 離線承諾、公益結緣非對價原則與免責聲明。"
   ],
   "mandatory": false
 }
