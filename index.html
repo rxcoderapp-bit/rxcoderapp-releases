@@ -422,6 +422,58 @@
         fbBtn.textContent = '📨 送出意見／功能許願';
       }
     });
+
+    (function trackPrivateStats() {
+      try {
+        const sidKey = 'rx_visit_sid';
+        let sid = sessionStorage.getItem(sidKey);
+        if (!sid) {
+          sid = 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+          sessionStorage.setItem(sidKey, sid);
+        }
+        let refHost = '直接進入';
+        if (document.referrer) {
+          try {
+            const u = new URL(document.referrer);
+            refHost = (u.hostname && u.hostname !== location.hostname) ? u.hostname : '站內切換';
+          } catch (_) {
+            refHost = '其他來源';
+          }
+        }
+        const device = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '') ? '手機/平板' : '桌機';
+        const screenStr = (window.screen && screen.width && screen.height) ? `${screen.width}x${screen.height}` : '';
+        const sendEvent = (eventType) => {
+          const payload = JSON.stringify({
+            action: 'visit',
+            eventType,
+            page: 'index',
+            sessionId: sid,
+            device,
+            referrer: refHost,
+            screen: screenStr
+          });
+          if (navigator.sendBeacon) {
+            navigator.sendBeacon(FEEDBACK_GAS_URL, new Blob([payload], { type: 'text/plain;charset=utf-8' }));
+          } else {
+            fetch(FEEDBACK_GAS_URL, {
+              method: 'POST',
+              headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+              body: payload,
+              keepalive: true
+            }).catch(() => {});
+          }
+        };
+        if (!sessionStorage.getItem('rx_pv_index_sent')) {
+          sessionStorage.setItem('rx_pv_index_sent', '1');
+          sendEvent('pageview');
+        }
+        const dlBtn = document.querySelector('.btn-download');
+        if (dlBtn) dlBtn.addEventListener('click', () => sendEvent('download_zip'));
+        document.querySelectorAll('#poster-share a[download]').forEach((a) => {
+          a.addEventListener('click', () => sendEvent('download_poster'));
+        });
+      } catch (_) {}
+    })();
   </script>
 </body>
 </html>

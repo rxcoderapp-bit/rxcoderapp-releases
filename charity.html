@@ -889,6 +889,49 @@
     function escapeHtml(str) {
       return String(str).replace(/[&<>"']/g, s => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[s]));
     }
+
+    (function trackCharityVisit() {
+      try {
+        if (!GAS_WEBAPP_URL) return;
+        const sidKey = 'rx_visit_sid';
+        let sid = sessionStorage.getItem(sidKey);
+        if (!sid) {
+          sid = 's' + Date.now().toString(36) + Math.random().toString(36).slice(2, 8);
+          sessionStorage.setItem(sidKey, sid);
+        }
+        if (sessionStorage.getItem('rx_pv_charity_sent')) return;
+        sessionStorage.setItem('rx_pv_charity_sent', '1');
+        let refHost = '直接進入';
+        if (document.referrer) {
+          try {
+            const u = new URL(document.referrer);
+            refHost = (u.hostname && u.hostname !== location.hostname) ? u.hostname : '站內切換';
+          } catch (_) {
+            refHost = '其他來源';
+          }
+        }
+        const device = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '') ? '手機/平板' : '桌機';
+        const payload = JSON.stringify({
+          action: 'visit',
+          eventType: 'pageview',
+          page: 'charity',
+          sessionId: sid,
+          device,
+          referrer: refHost,
+          screen: (window.screen && screen.width && screen.height) ? `${screen.width}x${screen.height}` : ''
+        });
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon(GAS_WEBAPP_URL, new Blob([payload], { type: 'text/plain;charset=utf-8' }));
+        } else {
+          fetch(GAS_WEBAPP_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: payload,
+            keepalive: true
+          }).catch(() => {});
+        }
+      } catch (_) {}
+    })();
   </script>
 </body>
 </html>
