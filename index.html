@@ -86,6 +86,43 @@
 
     .disclaimer-box { background: #F8FAFC; border: 1px solid #CBD5E1; border-left: 5px solid #0F766E; border-radius: 10px; padding: 14px 16px; font-size: 13px; color: #334155; margin-bottom: 24px; }
 
+    .sister-app-divider { border: 0; border-top: 2px dashed #CBD5E1; margin: 28px 0 22px; }
+    .sister-app-box {
+      background: #F8FAFC; border: 1.5px solid #C7D2FE; border-radius: 14px;
+      padding: 20px 22px; margin-top: 8px;
+    }
+    .sister-app-head {
+      display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;
+      gap: 8px; margin-bottom: 12px;
+    }
+    .sister-app-head h2 { font-size: 18px; font-weight: 900; color: #1E293B; }
+    .sister-app-badge {
+      background: #E0E7FF; color: #3730A3; border: 1px solid #C7D2FE;
+      font-size: 12px; font-weight: 800; padding: 4px 11px; border-radius: 999px;
+    }
+    .sister-app-grid { display: flex; flex-wrap: wrap; gap: 18px; align-items: center; }
+    .sister-app-info { flex: 1 1 320px; min-width: 0; }
+    .sister-app-qr-card {
+      flex: 0 0 184px; background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px;
+      padding: 12px; text-align: center; margin: 0 auto;
+    }
+    .sister-app-qr-card img { width: 152px; height: 152px; display: block; margin: 0 auto 8px; border-radius: 6px; }
+    .sister-app-qr-cap { font-size: 12px; font-weight: 800; color: #1E293B; line-height: 1.4; }
+    .sister-app-qr-sub { font-size: 11px; color: #64748B; margin-top: 2px; }
+    .btn-play {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: #1E293B; color: #FFFFFF; text-decoration: none; font-size: 14.5px;
+      font-weight: 800; padding: 11px 20px; border-radius: 10px; margin-top: 12px;
+      transition: background 0.15s; box-shadow: 0 3px 10px rgba(30,41,59,0.2);
+    }
+    .btn-play:hover { background: #0F172A; }
+    .sister-notice {
+      margin-top: 14px; padding: 11px 14px; border-radius: 9px;
+      font-size: 12.5px; line-height: 1.65;
+    }
+    .sister-notice.privacy { background: #FFFBEB; border: 1px solid #FDE68A; color: #78350F; }
+    .sister-notice.legal { background: #EEF2FF; border: 1px solid #C7D2FE; color: #312E81; margin-top: 10px; }
+
     .feedback-card { background: #F8FAFC; border: 1.5px solid #CBD5E1; border-radius: 14px; padding: 22px 24px; margin-bottom: 24px; }
     .fb-type-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
     .fb-chip {
@@ -353,6 +390,49 @@
         <strong>【OTA 自動升級說明】</strong><br>
         已安裝軟體的門市同仁，只需在軟體右上角點擊「ℹ️ 關於系統」➜「線上自動無痛升級」➜「🔍 檢查是否有新版本」，系統即會自動連線此發布中心並一鍵完成熱升級，無需手動重新下載與複製檔案。
       </div>
+
+      <hr class="sister-app-divider">
+
+      <div class="sister-app-box" id="pharmacount">
+        <div class="sister-app-head">
+          <h2>📱 同作者另款 Android 行動工具推薦｜藥盤點 PharmaCount</h2>
+          <span class="sister-app-badge">獨立上架 Google Play · 限 Android 手機</span>
+        </div>
+
+        <div class="sister-app-grid">
+          <div class="sister-app-info">
+            <p style="font-size: 13.5px; color: #334155; line-height: 1.65;">
+              若門市藥師與助理在藥櫃走動盤點時需要手機輔助工具，歡迎於 Google Play 下載同作者開發的獨立手機應用程式 <strong>《藥盤點 PharmaCount》</strong>（與櫃檯 Windows 電腦版 RXcoderapp 互補搭配使用）：
+            </p>
+            <ul class="feature-list" style="margin-top: 10px;">
+              <li><strong>AI 拍照數藥丸</strong>：拍藥盤自動以紅點與序號標記顆數，支援手動加減與連續盤點累加。</li>
+              <li><strong>六大調劑區庫存・處方試算・員工排班</strong>：可於手機端記錄效期與工時（支援 5 國語言）。</li>
+              <li><strong>Google Play 平台獨立供應</strong>：庫存盤點、處方試算與排班功能免費；AI 拍照計數每日免費 5 次，另有 Google Play 商店一次性 NT$ 100 內購解鎖選項。</li>
+            </ul>
+            <a href="https://play.google.com/store/apps/details?id=com.pharmacount.pharma_count" target="_blank" rel="noopener noreferrer" id="btnPharmaCountPlay" data-track="pharmacount-play" class="btn-play">
+              <span>▶ 前往 Google Play 查看／下載《藥盤點 PharmaCount》</span>
+            </a>
+          </div>
+
+          <div class="sister-app-qr-card">
+            <a href="https://play.google.com/store/apps/details?id=com.pharmacount.pharma_count" target="_blank" rel="noopener noreferrer" data-track="pharmacount-play" style="text-decoration:none; color:inherit;">
+              <img src="./assets/pharmacount_play_qr.png" alt="藥盤點 PharmaCount Google Play 下載 QR Code" loading="lazy">
+              <div class="sister-app-qr-cap">📷 手機掃碼直達 Google Play</div>
+              <div class="sister-app-qr-sub">com.pharmacount.pharma_count</div>
+            </a>
+          </div>
+        </div>
+
+        <div class="sister-notice privacy">
+          <strong>🔒【資料儲存與雲端 AI 拍照範圍提醒】</strong><br>
+          本手機 App 之庫存與排班資料僅儲存於您的手機本機；惟使用「AI 拍照計數」功能時，所拍攝之藥丸照片將連網傳送至雲端視覺模型（Gemini 雲端引擎）進行座標辨識。請務必僅拍攝裸錠或藥盤，切勿拍入病患個資、處方箋或藥袋姓名，以維護門市病患隱私。
+        </div>
+
+        <div class="sister-notice legal">
+          <strong>⚖️【獨立工具與公益專案完全區隔聲明】</strong><br>
+          本項目為開發者另款獨立上架 Google Play 之 Android 手機工具，內購功能與授權條件皆依 Google Play 商店規範獨立運作，與本公益專案之非營利免費授權完全無涉。
+        </div>
+      </div>
     </div>
 
     <div class="footer">
@@ -471,6 +551,9 @@
         if (dlBtn) dlBtn.addEventListener('click', () => sendEvent('download_zip'));
         document.querySelectorAll('#poster-share a[download]').forEach((a) => {
           a.addEventListener('click', () => sendEvent('download_poster'));
+        });
+        document.querySelectorAll('[data-track="pharmacount-play"]').forEach((el) => {
+          el.addEventListener('click', () => sendEvent('click_pharmacount'));
         });
       } catch (_) {}
     })();
