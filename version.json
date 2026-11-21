@@ -1,12 +1,12 @@
 {
-  "version": "1.4.3",
-  "title": "RXcoderapp 藥局智慧小幫手系統 v1.4.3",
-  "release_date": "2026-11-20",
-  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/releases/download/v1.4.3/RXcoderapp_v1.4.3.zip",
+  "version": "1.4.4",
+  "title": "RXcoderapp 藥局智慧小幫手系統 v1.4.4",
+  "release_date": "2026-11-21",
+  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/releases/download/v1.4.4/RXcoderapp_v1.4.4.zip",
   "changelog": [
-    "食藥署 #42 裸錠外觀圖庫、散裝反查器與三同矩陣外觀對照（仿單快查 & 中盤比價頁）：整合 6,399 筆衛福部食藥署藥品外觀資料集（依許可證字號精準對照），於藥品卡片直接呈現裸錠實體圖（點擊放大）、形狀／顏色／刻痕／尺寸與刻字標註；支援依外型與刻字反查散裝裸錠，並於「同成分比價矩陣」及中盤商「三同替代試算表」同步顯示外觀對照。",
-    "Chrome / Edge 健保雲端藥歷伴隨擴充套件 ＋ 本機 RXcoderapp 零個資安全橋接：隨附開箱即用之 RXcoderapp_健保雲端伴隨擴充套件，於健保雲端藥歷側欄離線展示裸錠外觀、半年內長期用藥（≥28 天）與跨院檢驗趨勢；搭配本機 RXcoderapp 可一鍵比對門市庫存／效期與三同替代藥品，並可預填匯入「慢箋寄存看板」（嚴格剔除病患姓名與身分證字號，僅本機安全橋接）。",
-    "軟體內建「10 秒協助安裝精靈」與一鍵 ZIP 匯出：於仿單快查頁與 Ctrl+K 快速啟動器提供擴充頁網址複製、一鍵複製擴充路徑／檔案總管定位及獨立 ZIP 下載包，方便單店與多台調劑台快速完成掛載。"
+    "全系統台灣藥局在地用語優化：將庫存與排班介面全面調整為台灣社區藥局日常慣用語（如「過期／即期／近效期」、「低庫存品項」、「異動紀錄（進出貨與盤點紀錄）」、「排班人力／月工時」、「藥師駐店檢查」），視覺更直覺友善。",
+    "USB-COM 序列埠掃碼槍連線強健化（藥品庫存頁）：新增 DTR/RTS 訊號喚醒（相容 Honeywell MiniDB / Unitech MS852Plus 等 CDC-ACM 掃碼槍）、COM 埠被 HIS 佔用時提供明確中文排查提示、支援無換行字元自動停頓解析、一鍵斷開釋放 COM 埠，以及 HID 掃碼 Tab 結尾相容。",
+    "關於分頁版本歷史精簡摺疊：預設呈現最近 3 個版本更新重點，更早版本自動收合摺疊，版面更清爽易讀。"
   ],
   "mandatory": false
 }
