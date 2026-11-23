@@ -150,6 +150,41 @@
     .fb-status.err { background: #FEF2F2; border: 1.5px solid #F87171; color: #7F1D1D; }
 
     .footer { text-align: center; padding: 20px; font-size: 12.5px; color: #64748B; border-top: 1px solid #E2E8F0; background: #F8FAFC; }
+
+    /* Live Demo Showcase + Screenshot Lightbox */
+    .demo-box { background: #F8FAFC; border: 1.5px solid #CBD5E1; border-radius: 16px; padding: 20px; margin-bottom: 24px; }
+    .demo-video-wrap { position: relative; border-radius: 12px; overflow: hidden; background: #0B3B31; border: 2px solid #0F766E; box-shadow: 0 12px 28px rgba(11,59,49,0.16); }
+    .demo-video-wrap video { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #0B3B31; }
+    .demo-meta-bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; margin-top: 10px; font-size: 12.5px; color: #475569; }
+    .demo-pill { display: inline-flex; align-items: center; gap: 6px; background: #ECFDF5; color: #065F46; border: 1px solid #A7F3D0; border-radius: 999px; padding: 3px 10px; font-weight: 700; font-size: 12px; }
+    .shot-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 16px; }
+    @media (max-width: 680px) { .shot-grid { grid-template-columns: 1fr; } }
+    .shot-card { background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 12px; overflow: hidden; cursor: zoom-in; transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s; text-align: left; padding: 0; }
+    .shot-card:hover { transform: translateY(-2px); border-color: #0F766E; box-shadow: 0 8px 20px rgba(15,118,110,0.12); }
+    .shot-card img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-bottom: 1px solid #E2E8F0; }
+    .shot-cap { padding: 10px 12px; }
+    .shot-cap-title { font-size: 13.5px; font-weight: 800; color: #0F172A; margin-bottom: 2px; }
+    .shot-cap-desc { font-size: 12px; color: #64748B; }
+    .lightbox-overlay { display: none; position: fixed; inset: 0; background: rgba(15,23,42,0.86); z-index: 9999; align-items: center; justify-content: center; padding: 20px; }
+    .lightbox-overlay.open { display: flex; }
+    .lightbox-inner { max-width: 1120px; width: 100%; background: #0F172A; border-radius: 14px; overflow: hidden; border: 1px solid rgba(255,255,255,0.18); box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
+    .lightbox-head { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; color: #F8FAFC; font-size: 14px; font-weight: 700; background: #0B3B31; }
+    .lightbox-close { background: rgba(255,255,255,0.16); color: #FFFFFF; border: none; border-radius: 8px; padding: 4px 12px; font-size: 13px; font-weight: 700; cursor: pointer; }
+    .lightbox-close:hover { background: rgba(255,255,255,0.28); }
+    .lightbox-inner img { display: block; width: 100%; height: auto; max-height: 82vh; object-fit: contain; background: #0F172A; }
+
+    /* Data Flow & Privacy Transparency Table */
+    .privacy-box { background: #FFFFFF; border: 1.5px solid #A7F3D0; border-radius: 16px; padding: 20px; margin-bottom: 24px; box-shadow: 0 6px 20px rgba(6,95,70,0.06); }
+    .privacy-table-wrap { overflow-x: auto; border-radius: 10px; border: 1px solid #E2E8F0; }
+    .privacy-table { width: 100%; border-collapse: collapse; font-size: 13px; min-width: 640px; }
+    .privacy-table th { background: #0B3B31; color: #FFFFFF; text-align: left; padding: 11px 12px; font-weight: 800; font-size: 12.5px; white-space: nowrap; }
+    .privacy-table td { padding: 11px 12px; border-top: 1px solid #E2E8F0; vertical-align: top; color: #334155; }
+    .privacy-table tr:nth-child(even) td { background: #F8FAFC; }
+    .flow-badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11.5px; font-weight: 800; white-space: nowrap; }
+    .flow-local { background: #DCFCE7; color: #166534; }
+    .flow-direct { background: #E0F2FE; color: #075985; }
+    .flow-opt { background: #FEF3C7; color: #92400E; }
+    .privacy-summary { margin-top: 12px; padding: 11px 14px; border-radius: 10px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; font-size: 13px; }
   </style>
 </head>
 <body>
@@ -163,7 +198,9 @@
       <p class="hero-subtitle">藥師每天少加班 1 小時｜採購・管藥・健保差價・USB 條碼・AI 辨識・排班一套搞定</p>
       <div class="nav-pills">
         <a href="#download">⬇️ 試用與下載</a>
+        <a href="#demo-showcase">🎬 36 秒實機示範</a>
         <a href="#features">✨ 8 大核心功能</a>
+        <a href="#privacy-flow">🛡️ 資料流向透明表</a>
         <a href="#charity-plan">🤝 公益結緣與定期定額</a>
         <a href="#poster-share">📣 分享新版海報</a>
         <a href="#feedback">💬 意見與功能許願</a>
@@ -188,6 +225,54 @@
         <a href="https://github.com/rxcoderapp-bit/rxcoderapp-releases/releases/download/v1.4.4/RXcoderapp_v1.4.4.zip" class="btn-download">
           <span>⬇️ 立即下載 RXcoderapp v1.4.4 完整安裝包 (.zip)</span>
         </a>
+      </div>
+
+      <div class="sec-head" id="demo-showcase">
+        <h2>🎬 36 秒實機操作示範 ＆ 介面精選截圖</h2>
+        <span class="sec-tag">脫敏模擬資料實錄 · 零個資外洩</span>
+      </div>
+
+      <div class="demo-box">
+        <div class="demo-video-wrap">
+          <video id="demoVideoPlayer" src="./assets/demo_walkthrough_720p.mp4" poster="./assets/demo_poster_720p.jpg" autoplay muted loop playsinline controls preload="metadata">
+            您的瀏覽器不支援內嵌影片，請直接<a href="./assets/demo_walkthrough_720p.mp4">下載示範影片 (.mp4)</a>。
+          </video>
+        </div>
+        <div class="demo-meta-bar">
+          <span class="demo-pill">▶ 36 秒快速巡覽：三同比價 ➜ 食藥署回收紅燈 ＆ 健保調價 ➜ 批號效期 ➜ 藥師排班</span>
+          <span>💡 畫面皆採模擬脫敏藥局資料實機錄製，點擊下方截圖可全螢幕檢視細節</span>
+        </div>
+
+        <div class="shot-grid">
+          <button type="button" class="shot-card" data-shot="./assets/demo_01_wholesaler_trisame.png" data-title="健保三同替代 ＆ 藥價差即時試算（模擬報價示範）">
+            <img src="./assets/demo_01_wholesaler_trisame.png" alt="RXcoderapp 健保三同替代與中盤比價介面截圖" loading="lazy">
+            <div class="shot-cap">
+              <div class="shot-cap-title">1. 健保三同替代 ＆ 9 大中盤即時比價</div>
+              <div class="shot-cap-desc">輸入健保碼秒查官方三同品項、換算單顆成本與處方藥價差（藥得）</div>
+            </div>
+          </button>
+          <button type="button" class="shot-card" data-shot="./assets/demo_02_recall_nhi_alert.png" data-title="食藥署 (TFDA #34) 藥品回收批號自動比對 ＆ 健保即將調價預警">
+            <img src="./assets/demo_02_recall_nhi_alert.png" alt="RXcoderapp 食藥署回收批號自動比對與健保調價預警截圖" loading="lazy">
+            <div class="shot-cap">
+              <div class="shot-cap-title">2. 食藥署回收批號紅燈 ＆ 健保調價預警</div>
+              <div class="shot-cap-desc">自動比對門市在庫批號命中立即亮紅燈，一鍵複製盤商退貨通知</div>
+            </div>
+          </button>
+          <button type="button" class="shot-card" data-shot="./assets/demo_03_inventory_expiry.png" data-title="批號效期紅黃綠燈看板 ＆ 中盤商退換貨明細分組">
+            <img src="./assets/demo_03_inventory_expiry.png" alt="RXcoderapp 批號效期看板與中盤商退換貨分組截圖" loading="lazy">
+            <div class="shot-cap">
+              <div class="shot-cap-title">3. 批號效期紅黃綠燈 ＆ 中盤退換貨清單</div>
+              <div class="shot-cap-desc">依原進貨中盤商自動分組即期／近效期品項，一鍵複製 LINE 明細或匯出 Excel</div>
+            </div>
+          </button>
+          <button type="button" class="shot-card" data-shot="./assets/demo_04_roster_pharmacist.png" data-title="藥局彈性員工排班表 ＆ 藥師駐店檢查 ＆ 執照到期預警">
+            <img src="./assets/demo_04_roster_pharmacist.png" alt="RXcoderapp 藥局彈性排班與藥師駐店檢查截圖" loading="lazy">
+            <div class="shot-cap">
+              <div class="shot-cap-title">4. 藥局彈性排班表 ＆ 執業藥師駐店檢查</div>
+              <div class="shot-cap-desc">自動檢核早午晚藥師駐店、執照效期到期預警，一鍵產生 LINE 班表</div>
+            </div>
+          </button>
+        </div>
       </div>
 
       <div class="sec-head" id="features">
@@ -251,6 +336,73 @@
             <div class="feat-title">藥局彈性排班 ＋ 執照到期預警</div>
             <div class="feat-desc">支援兩段班、營業時段藥師駐店檢查、學分與跨店支援預警，匯出 A4 Excel 與手機可讀排班表。</div>
           </div>
+        </div>
+      </div>
+
+      <div class="sec-head" id="privacy-flow">
+        <h2>🛡️ 資料流向透明表（給重視資安的藥師看個明白）</h2>
+        <span class="sec-tag">零中繼主機 · 零病患資料上傳</span>
+      </div>
+
+      <div class="privacy-box">
+        <div class="privacy-table-wrap">
+          <table class="privacy-table">
+            <thead>
+              <tr>
+                <th>功能模組</th>
+                <th>資料儲存位置</th>
+                <th>連線模式</th>
+                <th>實際資料流向說明</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>管制藥收支對帳 ＆ 簿冊</strong></td>
+                <td>100% 門市本機硬碟</td>
+                <td><span class="flow-badge flow-local">🟢 100% 本機離線</span></td>
+                <td>HIS 調劑檔解析、零負庫存檢核、快照備份與食藥署 A4 報表匯出皆於本機完成，全程不連網。</td>
+              </tr>
+              <tr>
+                <td><strong>慢箋領藥雙通道通知</strong></td>
+                <td>100% 門市本機硬碟</td>
+                <td><span class="flow-badge flow-direct">🔵 僅發送時直連</span></td>
+                <td>病患名冊與手機號碼只留存在本機；僅藥師手動點擊發送時，直連藥局自備的 SMSGO 簡訊商或自家 LINE 官方帳號 API。</td>
+              </tr>
+              <tr>
+                <td><strong>藥品庫存、效期 ＆ 員工排班</strong></td>
+                <td>100% 門市本機硬碟</td>
+                <td><span class="flow-badge flow-local">🟢 100% 本機離線</span></td>
+                <td>批號效期、進貨成本與排班表均存於門市本機 <code>data/</code>；跨裝置同步由藥師自行匯出／匯入 JSON／CSV，無雲端帳號。</td>
+              </tr>
+              <tr>
+                <td><strong>食藥署回收批號 ＆ 健保調價</strong></td>
+                <td>本機離線快取庫</td>
+                <td><span class="flow-badge flow-direct">🔵 僅同步官方公開資料</span></td>
+                <td>按下同步時僅單向下載政府開放資料（食藥署 <code>data.fda.gov.tw</code>、健保署 <code>info.nhi.gov.tw</code>）；<strong>批號比對全程於本機運算，門市庫存絕不上傳</strong>。</td>
+              </tr>
+              <tr>
+                <td><strong>9 大中盤即時查價 ＆ 結帳視窗</strong></td>
+                <td>帳密本機加密保存</td>
+                <td><span class="flow-badge flow-direct">🔵 點對點直連盤商</span></td>
+                <td>查價與同步購物車僅由門市電腦直接連線各中盤商官網，完全不經過任何開發者中繼伺服器。</td>
+              </tr>
+              <tr>
+                <td><strong>進貨單／處方 AI OCR（選用）</strong></td>
+                <td>預設關閉（不啟用）</td>
+                <td><span class="flow-badge flow-opt">🟡 BYOK 選用功能</span></td>
+                <td>僅在藥師自行填入個人 Gemini / OpenAI API Key 並主動點擊辨識時，將該次影像直連官方 AI API（建議遮蔽病患敏感欄位）。</td>
+              </tr>
+              <tr>
+                <td><strong>授權驗證 ＆ 版本更新 (OTA)</strong></td>
+                <td>授權檔存於本機</td>
+                <td><span class="flow-badge flow-local">🟢 離線簽章驗證</span></td>
+                <td>授權採用非對稱 Ed25519 數位簽章 100% 離線驗證；OTA 僅讀取 GitHub 公開版本檔，不會回傳任何門市資料。</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="privacy-summary">
+          <strong>🔒 開發者公開承諾：</strong>本系統不設會員中心、不蒐集病患姓名與調劑明細、不經手藥局進貨底價與中盤帳密。您隨時可於防火牆檢視連線去向，所有核心業務資料 100% 掌握在藥局自己的電腦裡。
         </div>
       </div>
 
@@ -441,7 +593,36 @@
     </div>
   </div>
 
+  <div class="lightbox-overlay" id="shotLightbox" role="dialog" aria-modal="true" aria-label="實機截圖放大預覽">
+    <div class="lightbox-inner">
+      <div class="lightbox-head">
+        <span id="shotLightboxTitle">實機截圖預覽</span>
+        <button type="button" class="lightbox-close" id="shotLightboxClose">✕ 關閉 (ESC)</button>
+      </div>
+      <img id="shotLightboxImg" src="" alt="實機截圖放大預覽">
+    </div>
+  </div>
+
   <script>
+    (function initShotLightbox() {
+      const overlay = document.getElementById('shotLightbox');
+      const imgEl = document.getElementById('shotLightboxImg');
+      const titleEl = document.getElementById('shotLightboxTitle');
+      const closeBtn = document.getElementById('shotLightboxClose');
+      if (!overlay || !imgEl) return;
+      const close = () => { overlay.classList.remove('open'); imgEl.src = ''; };
+      document.querySelectorAll('.shot-card[data-shot]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          imgEl.src = btn.getAttribute('data-shot') || '';
+          titleEl.textContent = btn.getAttribute('data-title') || '實機截圖預覽';
+          overlay.classList.add('open');
+        });
+      });
+      closeBtn.addEventListener('click', close);
+      overlay.addEventListener('click', (e) => { if (e.target === overlay) close(); });
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && overlay.classList.contains('open')) close(); });
+    })();
+
     const FEEDBACK_GAS_URL = "https://script.google.com/macros/s/AKfycbzKC4pRXu3JAvBEReRw2EygG0jt5nHcIJmIIu2jddXFFjYTABG2f8ecTE9oDxpZLH_T/exec";
     let selectedFbCategory = "功能許願";
 
