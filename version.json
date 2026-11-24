@@ -1,12 +1,13 @@
 {
-  "version": "1.4.4",
-  "title": "RXcoderapp 藥局智慧小幫手系統 v1.4.4",
-  "release_date": "2026-11-21",
-  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/releases/download/v1.4.4/RXcoderapp_v1.4.4.zip",
+  "version": "1.4.5",
+  "title": "RXcoderapp 藥局智慧小幫手系統 v1.4.5",
+  "release_date": "2026-11-24",
+  "download_url": "https://github.com/rxcoderapp-bit/rxcoderapp-releases/releases/download/v1.4.5/RXcoderapp_v1.4.5.zip",
   "changelog": [
-    "全系統台灣藥局在地用語優化：將庫存與排班介面全面調整為台灣社區藥局日常慣用語（如「過期／即期／近效期」、「低庫存品項」、「異動紀錄（進出貨與盤點紀錄）」、「排班人力／月工時」、「藥師駐店檢查」），視覺更直覺友善。",
-    "USB-COM 序列埠掃碼槍連線強健化（藥品庫存頁）：新增 DTR/RTS 訊號喚醒（相容 Honeywell MiniDB / Unitech MS852Plus 等 CDC-ACM 掃碼槍）、COM 埠被 HIS 佔用時提供明確中文排查提示、支援無換行字元自動停頓解析、一鍵斷開釋放 COM 埠，以及 HID 掃碼 Tab 結尾相容。",
-    "關於分頁版本歷史精簡摺疊：預設呈現最近 3 個版本更新重點，更早版本自動收合摺疊，版面更清爽易讀。"
+    "食藥署 (TFDA #34) 藥品回收批號自動比對（藥品庫存頁）：直連食藥署公開藥品回收資料集（內建離線快取並支援一鍵同步），透過健保碼對應之許可證字號自動比對門市在庫批號（支援單批、多批、連續批號區間與全批號回收），中標批號即時於頂部與表格亮紅燈提醒下架，並可一鍵複製盤商退貨通知。",
+    "健保即將調價／退出給付預警與三同替代方案：升級健保價資料庫同步管線，自動標記未來已排程調價、即將屆期退出與健保價歸零品項，對照門市在庫加權成本提醒潛在負毛利風險，並直接附上最新前 3 名有效健保三同替代藥品與一鍵 9 大中盤查價連結。",
+    "全台回收公告與健保異動即時查詢總表：於庫存頁全新「🚨 回收批號與調價預警」分頁與 Ctrl+K 快速指令，可隨時檢索全台近 5 年食藥署藥品回收公告與健保異動清冊。",
+    "中盤商「開啟已登入結帳視窗」免重打帳密修復（全 9 家盤商）：於 WebView2 結帳視窗導航前自動同步後台 User-Agent、清除舊重複憑證並完整還原 HttpOnly／SameSite Cookie 屬性，徹底解決 ECShop 體系（嘉鏵、彬利、兆宇、茂源）因 UA 不一致作廢 ECS_ID 而跳回登入頁之問題。"
   ],
   "mandatory": false
 }

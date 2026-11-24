@@ -126,17 +126,39 @@ def main():
     items = {}
     active_count = 0
     changed_count = 0
+    upcoming_change_count = 0
+    upcoming_delist_count = 0
+    delisted_count = 0
 
     for code, intervals in code_history.items():
         intervals.sort(key=lambda x: (x[0], x[1]))
-        current = intervals[-1]
+        current = None
         for iv in intervals:
             if iv[0] <= today_roc <= (iv[1] if iv[1] > 0 else 9991231):
                 current = iv
+        if current is None:
+            past = [iv for iv in intervals if iv[0] <= today_roc]
+            current = past[-1] if past else intervals[-1]
 
         latest_start, latest_end, latest_price = current
-        is_active = (latest_price > 0) and (latest_end == 0 or latest_end >= today_roc)
-        if (not is_active and latest_start < recent_cutoff_roc) or (latest_price <= 0 and latest_start < recent_cutoff_roc):
+        is_active = (latest_price > 0) and (latest_start <= today_roc) and (latest_end == 0 or latest_end >= today_roc)
+
+        future_iv = None
+        for iv in intervals:
+            if iv[0] > today_roc:
+                future_iv = iv
+                break
+
+        has_future_change = future_iv is not None and future_iv[2] != latest_price
+        finite_end_iso = _roc_str_to_iso(str(latest_end)) if (latest_end > 0 and latest_end != 9991231) else ""
+        upcoming_delist = (
+            (has_future_change and future_iv[2] <= 0)
+            or (is_active and bool(finite_end_iso) and (future_iv is None or future_iv[2] <= 0))
+        )
+
+        if (not is_active and not has_future_change and latest_start < recent_cutoff_roc) or (
+            latest_price <= 0 and not has_future_change and latest_start < recent_cutoff_roc
+        ):
             continue
 
         prev_price = None
@@ -148,6 +170,12 @@ def main():
             changed_count += 1
         if is_active:
             active_count += 1
+        else:
+            delisted_count += 1
+        if upcoming_delist:
+            upcoming_delist_count += 1
+        elif has_future_change and future_iv[2] > 0:
+            upcoming_change_count += 1
 
         _, zh, en, ing, vendor, form, drug_class, group_name, atc, lic_id = code_meta[code]
         entry = {
@@ -164,6 +192,11 @@ def main():
         }
         if prev_price is not None:
             entry["pp"] = prev_price
+        if finite_end_iso:
+            entry["ee"] = finite_end_iso
+        if has_future_change:
+            entry["fp"] = future_iv[2]
+            entry["fed"] = _roc_str_to_iso(str(future_iv[0]))
         if lic_id:
             entry["l"] = lic_id
         if not is_active:
@@ -178,7 +211,10 @@ def main():
             "total_csv_rows": row_count,
             "item_count": len(items),
             "active_count": active_count,
+            "delisted_count": delisted_count,
             "price_changed_count": changed_count,
+            "upcoming_change_count": upcoming_change_count,
+            "upcoming_delist_count": upcoming_delist_count,
             "group_count": len(groups.values),
         },
         "groups": groups.values,
