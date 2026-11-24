@@ -185,6 +185,12 @@
     .flow-direct { background: #E0F2FE; color: #075985; }
     .flow-opt { background: #FEF3C7; color: #92400E; }
     .privacy-summary { margin-top: 12px; padding: 11px 14px; border-radius: 10px; background: #ECFDF5; border: 1px solid #A7F3D0; color: #065F46; font-size: 13px; }
+    .guide-steps { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 14px; }
+    @media (max-width: 680px) { .guide-steps { grid-template-columns: 1fr; } }
+    .guide-step { background: #FFFFFF; border: 1.5px solid #E2E8F0; border-radius: 12px; padding: 12px 14px; display: flex; gap: 10px; align-items: flex-start; }
+    .guide-num { flex: 0 0 26px; height: 26px; border-radius: 50%; background: #EA580C; color: #FFFFFF; font-size: 13px; font-weight: 800; display: flex; align-items: center; justify-content: center; margin-top: 1px; }
+    .guide-step-title { font-size: 13.5px; font-weight: 800; color: #0F172A; margin-bottom: 3px; }
+    .guide-step-desc { font-size: 12.2px; color: #475569; line-height: 1.55; }
   </style>
 </head>
 <body>
@@ -202,6 +208,7 @@
         <a href="#features">✨ 8 大核心功能</a>
         <a href="#privacy-flow">🛡️ 資料流向透明表</a>
         <a href="#charity-plan">🤝 公益結緣與定期定額</a>
+        <a href="#license-ota-guide">🔑 序號與 OTA 教學</a>
         <a href="#poster-share">📣 分享新版海報</a>
         <a href="#feedback">💬 意見與功能許願</a>
       </div>
@@ -465,6 +472,54 @@
         <a href="./charity.html" class="btn-charity">
           <span>❤️ 前往公益結緣回饋與本地塗黑憑證上傳頁</span>
         </a>
+      </div>
+
+      <div class="sec-head" id="license-ota-guide">
+        <h2>🔑 授權序號取得（找機器碼 HWID）＆ 線上自動升級 (OTA) 教學</h2>
+        <span class="sec-tag">36 秒實機操作步驟 · 照著點一次就會</span>
+      </div>
+
+      <div class="demo-box">
+        <div class="demo-video-wrap" style="border-color: #EA580C;">
+          <video id="guideVideoPlayer" src="./assets/demo_license_ota_guide_720p.mp4" poster="./assets/demo_license_ota_poster_720p.jpg" controls playsinline preload="metadata">
+            您的瀏覽器不支援內嵌影片，請直接<a href="./assets/demo_license_ota_guide_720p.mp4">下載操作教學影片 (.mp4)</a>。
+          </video>
+        </div>
+        <div class="demo-meta-bar">
+          <span class="demo-pill" style="background:#FFF7ED; color:#9A3412; border-color:#FED7AA;">🎬 36 秒圖文教學：找機器碼 (HWID) ➜ 申請／貼上序號離線解鎖 ➜ 一鍵 OTA 無痛升級</span>
+          <span>💡 畫面使用示範模擬機器碼，可直接轉傳此網址給藥局同仁照著操作</span>
+        </div>
+
+        <div class="guide-steps">
+          <div class="guide-step">
+            <div class="guide-num">1</div>
+            <div>
+              <div class="guide-step-title">點左側最下方「ℹ️ 關於與授權管理」</div>
+              <div class="guide-step-desc">打開 RXcoderapp 後，點擊左側選單最底部的<strong>「ℹ️ 關於與授權管理」</strong>（或點右上角「⏳ 試用版」徽章亦可直達）。</div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">2</div>
+            <div>
+              <div class="guide-step-title">一鍵複製「本機門市專屬機器碼 (HWID)」</div>
+              <div class="guide-step-desc">在「🔑 系統授權與序號管理」區塊中，點<strong>「📋 複製機器碼」</strong>，連同公益捐款收據至<a href="./charity.html" style="color:#0F766E; font-weight:700;">公益結緣頁上傳</a>（或來信 <code>rxcoderapp@gmail.com</code>）即可免費領取專屬序號。</div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">3</div>
+            <div>
+              <div class="guide-step-title">貼上序號，100% 離線秒解鎖正式版</div>
+              <div class="guide-step-desc">收到以 <code>RXKEY-</code> 開頭的序號後，點<strong>「🔑 輸入序號解鎖正式版」</strong>➜ 貼上並按<strong>「🚀 驗證並解鎖正式版」</strong>，立即完成本機 Ed25519 離線驗章。</div>
+            </div>
+          </div>
+          <div class="guide-step">
+            <div class="guide-num">4</div>
+            <div>
+              <div class="guide-step-title">線上自動無痛升級 (OTA Update)</div>
+              <div class="guide-step-desc">同一頁往下滑到<strong>「☁️ 線上自動無痛升級」</strong>➜ 點<strong>「🔍 檢查是否有新版本」</strong>➜ 按<strong>「🚀 立即下載並自動熱升級」</strong>，自動排除現存 Excel 簿冊、簡訊紀錄與授權憑證，100% 無損升級。</div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="poster-share" id="poster-share">
